@@ -13,7 +13,93 @@ import logo from '../../resources/bottleneck-logo.svg'
                 <h1>Bottleneck</h1>
             </div>
         </div>
-        <p>This is the SideBar Component</p>
+        <div id="tagline">
+            <p>Browsing the front page of the internet,<br/> one minute at a time... </p>
+        </div>
+        <div id="subreddit-list">
+            <ul id="subreddit-ul">
+                <li className="subreddit">
+                    <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            {/*<img src={} alt=""/>*/}
+                        </div>
+                        <p>
+                            r/all    
+                        </p>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            {/*<img src={} alt=""/>*/}
+                        </div>
+                        <p>
+                            r/pics   
+                        </p>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            {/*<img src={} alt=""/>*/}
+                        </div>
+                        <p>
+                            r/memes   
+                        </p>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            {/*<img src={} alt=""/>*/}
+                        </div>
+                        <p>
+                            r/wholesomememes  
+                        </p>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            {/*<img src={} alt=""/>*/}
+                        </div>
+                        <p>
+                            r/BeAmazed
+                        </p>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            {/*<img src={} alt=""/>*/}
+                        </div>
+                        <p>
+                            r/funny
+                        </p>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            {/*<img src={} alt=""/>*/}
+                        </div>
+                        <p>
+                            r/mildlyinfuriating  
+                        </p>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            {/*<img src={} alt=""/>*/}
+                        </div>
+                        <p>
+                            r/facepalm
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </div>
 	  </div>
 	);
   }
