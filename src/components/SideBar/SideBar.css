@@ -17,6 +17,7 @@ h1 {
     background-clip: text;
     color: transparent;
     font-size: 38px;
+    margin: .35rem 0 0 1rem;
 }
 
 #headline-container {
@@ -31,8 +32,15 @@ h1 {
     width: 4rem;
     border-radius: 100%;
     background: linear-gradient(180deg, #fcf6f7 50%, #CCCCCC 100%);
+    display: flex;
+    place-content: center;
+}
+
+#logo-container img {
+    height: 3rem;
+    margin: auto;
 }
 
 #text-container {
-
+    height: 4rem;
 }
