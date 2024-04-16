@@ -60,3 +60,48 @@ h1 {
     padding-left: 5px;
     padding-top: 2px;
 }
+
+#subreddit-list {
+    margin-top: 4rem;
+}
+
+#subreddit-list ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.subreddit {
+    height: 2.5rem;
+}
+
+.subreddit-p-container {
+    display: inline-block;
+    justify-content: center;
+}
+
+.subreddit a {
+    display: flex;
+    align-items: center;
+}
+
+.subreddit p {
+    display: inline-block;
+    color: var(--snow);
+    margin-left: 1rem;
+    margin-top: 0;
+}
+
+.subreddit-icon-container {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    background: linear-gradient(180deg, #fcf6f7 50%, #CCCCCC 100%);
+    display: inline-flex;
+    place-content: center;
+}
+
+.subreddit-icon-container img {
+    height: 1.5rem;
+    margin: auto;
+}

@@ -1,6 +1,14 @@
 import React from 'react';
 import './SideBar.css';
 import logo from '../../resources/bottleneck-logo.svg'
+import champagneBottles from '../../resources/champagne-bottles-icon.svg'
+import glassBottleIcon from '../../resources/glass-bottle-icon.svg'
+import whiskeyBottle from '../../resources/fd3d3dfa-b6ef-46bf-a6dc-f7181d62d556.svg'
+import cokeBottle from '../../resources/cola-drink-bottle-icon.svg'
+import waterBottle from '../../resources/pet-bottle-icon.svg'
+import babyBottle from '../../resources/drink-bottle-icon.svg'
+import noLactose from '../../resources/lactose-milk-icon.svg'
+import milkBottle from '../../resources/milk-water-bottle-icon.svg'
   
   const SideBar = () =>  {
 	return (
@@ -17,85 +25,101 @@ import logo from '../../resources/bottleneck-logo.svg'
             <p>Browsing the front page of the internet,<br/> one minute at a time... </p>
         </div>
         <div id="subreddit-list">
-            <ul id="subreddit-ul">
+            <ul>
                 <li className="subreddit">
                     <a href="#" target="_blank">
                         <div className="subreddit-icon-container">
-                            {/*<img src={} alt=""/>*/}
+                            <img src={champagneBottles} alt=""/>
                         </div>
-                        <p>
-                            r/all    
-                        </p>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/all    
+                            </p>
+                        </div>
                     </a>
                 </li>
                 <li className="subreddit">
                 <a href="#" target="_blank">
                         <div className="subreddit-icon-container">
-                            {/*<img src={} alt=""/>*/}
+                            <img src={glassBottleIcon} alt=""/>
                         </div>
-                        <p>
-                            r/pics   
-                        </p>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/pics   
+                            </p>
+                        </div>
                     </a>
                 </li>
                 <li className="subreddit">
                 <a href="#" target="_blank">
                         <div className="subreddit-icon-container">
-                            {/*<img src={} alt=""/>*/}
+                            <img src={whiskeyBottle} alt=""/>
                         </div>
-                        <p>
-                            r/memes   
-                        </p>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/memes   
+                            </p>
+                        </div>
                     </a>
                 </li>
                 <li className="subreddit">
                 <a href="#" target="_blank">
                         <div className="subreddit-icon-container">
-                            {/*<img src={} alt=""/>*/}
+                            <img src={cokeBottle} alt=""/>
                         </div>
-                        <p>
-                            r/wholesomememes  
-                        </p>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/wholesomememes  
+                            </p>
+                        </div>
                     </a>
                 </li>
                 <li className="subreddit">
                 <a href="#" target="_blank">
                         <div className="subreddit-icon-container">
-                            {/*<img src={} alt=""/>*/}
+                            <img src={waterBottle} alt=""/>
                         </div>
-                        <p>
-                            r/BeAmazed
-                        </p>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/BeAmazed
+                            </p>
+                        </div>
                     </a>
                 </li>
                 <li className="subreddit">
                 <a href="#" target="_blank">
                         <div className="subreddit-icon-container">
-                            {/*<img src={} alt=""/>*/}
+                            <img src={babyBottle} alt=""/>
                         </div>
-                        <p>
-                            r/funny
-                        </p>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/funny
+                            </p>
+                        </div>
                     </a>
                 </li>
                 <li className="subreddit">
                 <a href="#" target="_blank">
                         <div className="subreddit-icon-container">
-                            {/*<img src={} alt=""/>*/}
+                            <img src={noLactose} alt=""/>
                         </div>
-                        <p>
-                            r/mildlyinfuriating  
-                        </p>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/mildlyinfuriating  
+                            </p>
+                        </div>
                     </a>
                 </li>
                 <li className="subreddit">
                 <a href="#" target="_blank">
                         <div className="subreddit-icon-container">
-                            {/*<img src={} alt=""/>*/}
+                            <img src={milkBottle} alt=""/>
                         </div>
-                        <p>
-                            r/facepalm
-                        </p>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/facepalm
+                            </p>
+                        </div>
                     </a>
                 </li>
             </ul>
