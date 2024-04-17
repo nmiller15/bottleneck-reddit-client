@@ -1,9 +1,11 @@
 .Feed {
     background-color: var(--snow);
     color: var(--black);
-    margin-left: 25rem;
+    margin-left: 20rem;
+    margin-top: 0;
     top: 0;
     height: 100vh;
+    padding: 1rem 3rem;
 }
 
 p {
