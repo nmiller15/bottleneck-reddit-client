@@ -143,7 +143,7 @@ import milkBottle from '../../resources/milk-water-bottle-icon.svg'
             </div>
             <div id="cta-body">
                 <p>
-                    If using reddit this way is annoying, then tell Reddit about it! If Reddit is truly the front page of the internet, we shouldn't be stuck on <i>their</i> home page. Write and email to contact@reddit.com.
+                If using reddit this way is annoying, then tell Reddit about it! If Reddit is truly the front page of the internet, we shouldn’t be stuck on their home page. Write an email to contact@reddit.com.
                 </p>
             </div>
         </div>
