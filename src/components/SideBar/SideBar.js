@@ -135,6 +135,18 @@ import milkBottle from '../../resources/milk-water-bottle-icon.svg'
                 <p>requests until your<br/>rate is limited</p>
             </div>
         </div>
+        <div id="cta">
+            <div id="cta-button">
+                <a href="mailto:contact@reddit.com">
+                    Contact Reddit
+                </a>
+            </div>
+            <div id="cta-body">
+                <p>
+                    If using reddit this way is annoying, then tell Reddit about it! If Reddit is truly the front page of the internet, we shouldn't be stuck on <i>their</i> home page. Write and email to contact@reddit.com.
+                </p>
+            </div>
+        </div>
 	  </div>
 	);
   }

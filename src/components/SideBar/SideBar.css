@@ -1,9 +1,10 @@
 .SideBar {
     height: 100%;
+    width: 20rem;
     position: fixed;
     background-color: var(--accent-pink);
     color: white;
-    padding: 2rem 2.3rem 0 2.3rem;
+    padding: 2rem 2.3rem 2rem 2.3rem;
     top: 0;
     left: 0;
 }
@@ -153,4 +154,30 @@ h1 {
     font-size: 12px;
     text-align: center;
     margin-top: 6px;
+}
+
+#cta {
+    margin-top: 30px;
+}
+
+#cta-button {
+    background: linear-gradient(180deg, #FFD5D8, #FFD5D8 53%, #C0BFBF 100%);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+}
+
+#cta-button a {
+    color: #000000;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+#cta-body {
+    margin-top: 10px; 
+}
+
+#cta-body p {
+   font-size: 14px; 
 }
