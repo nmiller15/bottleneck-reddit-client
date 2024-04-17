@@ -23,6 +23,11 @@ import searchIcon from '../../resources/Search Icon.svg'
                 <img src={searchIcon} alt="search"/>
             </div>
         </header>
+        <div id="content-container">
+            <div className="mock-post">
+                <p>this is a post, but a Card will go here later</p>
+            </div>
+        </div>
 	  </div>
 	);
   }

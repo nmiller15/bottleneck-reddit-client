@@ -46,3 +46,13 @@ header {
 #search-bar-container {
     display: none;
 }
+
+#content-container {
+    padding: 1rem 4rem;
+}
+
+.mock-post {
+    width: 100%;
+    background-color: blue;
+    height: 200px;
+}
