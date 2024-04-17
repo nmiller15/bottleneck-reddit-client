@@ -166,6 +166,11 @@ h1 {
     padding-top: 10px;
     padding-bottom: 10px;
     border-radius: 20px;
+    transition: background .15s ease-in-out;
+}
+
+#cta-button:hover {
+    background: linear-gradient(180deg, #FFD5D8, #FFD5D8 53%, #949494 100%);
 }
 
 #cta-button a {
