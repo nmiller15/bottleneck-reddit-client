@@ -62,7 +62,7 @@ h1 {
 }
 
 #subreddit-list {
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 #subreddit-list ul {
@@ -72,14 +72,14 @@ h1 {
 }
 
 .subreddit {
-    padding: .5rem;
+    padding: .35rem .5rem;
     border-radius: 25px;
     transition: background-color .15s ease-in-out;
     background-color: rgba(255,255,255, 0%);
 }
 
 .subreddit:hover {
-    background-color: rgba(255, 255, 255, 15%)
+    background-color: var(--transparent-white);
 }
 
 .subreddit-p-container {
@@ -113,4 +113,44 @@ h1 {
 .subreddit-icon-container img {
     height: 1.5rem;
     margin: auto;
+}
+
+#counter {
+    padding-top: 15px;
+    margin: auto;
+}
+
+#clock-container {
+    height: 24px;
+    width: 61px;
+    margin: auto;
+    background-color: var(--transparent-white);
+    border-radius: 20px;
+}
+
+#clock-container p {
+    font-size: 12px;
+    text-align: center;
+    padding: 3px 20px;
+}
+
+#call-count-container {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    background-color: var(--transparent-white);
+    border-radius: 20px;
+    margin-top: 4px;
+}
+
+#call-count-container p {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#label-container p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 6px;
 }
