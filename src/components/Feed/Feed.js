@@ -1,7 +1,11 @@
 import React from 'react';
 // import SearchBar from '../SearchBar/SearchBar.js'
+import Card from '../Card/Card.js'
 import './Feed.css';
-import searchIcon from '../../resources/Search Icon.svg'
+import searchIcon from '../../resources/Search Icon.svg';
+import mockJson from '../../mock/reddit-all-mock.json';
+
+
   
   const Feed = () =>  {
 	return (
@@ -24,9 +28,7 @@ import searchIcon from '../../resources/Search Icon.svg'
             </div>
         </header>
         <div id="content-container">
-            <div className="mock-post">
-                <p>this is a post, but a Card will go here later</p>
-            </div>
+            <Card />
         </div>
 	  </div>
 	);
