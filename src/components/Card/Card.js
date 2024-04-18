@@ -1,5 +1,8 @@
 import React from 'react';
-import mockJson from '../../mock/reddit-all-mock.json'
+import mockJson from '../../mock/reddit-all-mock.json';
+import comment from '../../resources/comment.svg';
+import voterMock from '../../resources/voter_mock.svg';
+import './Card.css';
 
 // An array of post objects is available at mockJson.data.children
 // Relevant properties in 
@@ -34,22 +37,40 @@ const Card = () =>  {
 
 	return (
 	    <div className="Card">
-            <div className="title-container">
-                <div className="voter"></div>
-                <div className="title">
-                    <p>
-                        {title}
-                    </p>
+            <div className="post-header">
+                <div className="title-container">
+                    <div className="voter">
+                        <img src={voterMock} alt=""/>
+                        {/* <Voter score={score} /> */}
+                    </div>
+                    <div className="title">
+                        <p>
+                            {title}
+                        </p>
+                    </div>
                 </div>
                 <div className="description">
                     <p>
                         {description}
                     </p>
                 </div>
-                <div className="video-container">
-                    <video src={url} controls></video>
+            </div>
+            <div className="video-container">
+                <video src={url} controls></video>
+            </div>
+            <div className="post-footer">
+                <div className="child subreddit-of-post">
+                    <p>{subreddit}</p>
                 </div>
-
+                <div className="comment-button-container">
+                    <div className="comment-button">
+                        <p>{numComments}</p>
+                        <img src={comment}  alt=''/>
+                    </div>
+                </div>
+                <div className="child author-of-post">
+                    <p>u/{author}</p>
+                </div>
             </div>
 	    </div>
 	);
