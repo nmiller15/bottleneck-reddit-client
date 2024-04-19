@@ -1,6 +1,7 @@
 import React from 'react';
-import SearchBar from '../SearchBar/SearchBar.js'
-import Card from '../Card/Card.js'
+import SearchBar from '../SearchBar/SearchBar.js';
+import Card from '../Card/Card.js';
+import PostModal from '../PostModal/PostModal.js';
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
 
@@ -28,7 +29,10 @@ import searchIcon from '../../resources/Search Icon.svg';
             </div>
         </header>
         <div id="content-container">
-            <Card />
+          <Card />
+        </div>
+        <div id="modal-container">
+          <PostModal />
         </div>
 	  </div>
 	);

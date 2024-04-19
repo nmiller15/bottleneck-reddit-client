@@ -23,17 +23,7 @@ const Card = () =>  {
     const url = postArray[4].data.media.reddit_video.fallback_url;
     const numComments = postArray[4].data.num_comments;
 
-    console.log('postHint ' + postHint);
-    
-    console.log('title: ' + title);
-    console.log('description ' + description);
-    console.log('author ' + author);
-    console.log('subreddit ' + subreddit);
-    console.log('score ' + score);
-    console.log('thumbnailUrl ' + thumbnailUrl);
-    console.log('url ' + url);
-    console.log('numComments ' + numComments);
-
+    console.log(url);
 
 	return (
 	    <div className="Card">
