@@ -59,7 +59,7 @@ const PostModal = () =>  {
                 </div>
             </div>
             <div className="comments-container">
-                <h3>Comments ({numComments})</h3>
+                <h3>Comments <span class="accent">({numComments})</span></h3>
                 <CommentsList comments={commentArray} />
             </div>
         </div>

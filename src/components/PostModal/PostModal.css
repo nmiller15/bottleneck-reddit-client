@@ -5,9 +5,22 @@
 .PostModal {
     padding: 1rem;
     padding-bottom: .5rem;
-    margin: 0 4rem;
+    margin: 0 1rem;
     background-color: rgba(230, 139, 145, 15%);
     border-radius: 10px;
+    height: 85vh;
+    overflow-y: scroll;
+    box-shadow: 2px 2px 3px rgba(230, 139, 145, 5%);
+ }
+
+ h3 {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.accent {
+    color: var(--accent-pink);
+    font-size: 12px;
  }
  
  .post-text {
