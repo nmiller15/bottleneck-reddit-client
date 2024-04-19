@@ -7,6 +7,11 @@
   --transparent-white: rgba(255, 255, 255, 15%);
 }
 
+/*
+* {
+  outline: 1px solid lightcoral;
+}*/
+
 body {
   font-family: Poppins, sans-serif;
   margin: 0;

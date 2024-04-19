@@ -5,7 +5,6 @@
     margin-top: 0;
     top: 0;
     height: 100vh;
-    padding: 1rem;
 }
 
 p {
@@ -16,6 +15,8 @@ p {
 header {
     display: flex;
     justify-content: space-between;
+    padding: 1rem;
+    background: transparent;
 }
 
 #filters ul {
@@ -45,6 +46,10 @@ header {
 
 #search-bar-container {
     display: none;
+}
+
+#search-icon-container img {
+    height: 28px;
 }
 
 #content-container {

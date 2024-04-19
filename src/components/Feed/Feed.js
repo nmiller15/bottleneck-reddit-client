@@ -1,9 +1,9 @@
 import React from 'react';
-// import SearchBar from '../SearchBar/SearchBar.js'
+import SearchBar from '../SearchBar/SearchBar.js'
 import Card from '../Card/Card.js'
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
-import mockJson from '../../mock/reddit-all-mock.json';
+
 
 
   
@@ -21,7 +21,7 @@ import mockJson from '../../mock/reddit-all-mock.json';
                 </ul>
             </div>
             <div id="search-bar-container">
-            
+              <SearchBar />
             </div>
             <div id="search-icon-container">
                 <img src={searchIcon} alt="search"/>
