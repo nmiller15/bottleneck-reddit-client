@@ -5,11 +5,10 @@ import Comment from '../Comment/Comment.js';
     console.log(comments);
 	return (
         <>
-            {comments.map((comment, index) => {
-                <Comment comment={comment} />
-            })}
-        </>
-        
+            {comments.map((comment, index) => (
+                <Comment key={index} comment={comment} />
+            ))}
+        </>       
     )
   }
   
