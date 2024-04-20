@@ -1,0 +1,15 @@
+.Voter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.arrow {
+    padding: .1rem;
+}
+
+.down-arrow-container {
+    transform: rotate(180deg) translateX(1%);
+}
