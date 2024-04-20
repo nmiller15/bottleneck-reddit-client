@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentsList from '../CommentsList/CommentsList.js';
+import Voter from '../Voter/Voter.js';
 import mockJson from '../../mock/reddit-post-mock.json';
 import voterMock from '../../resources/voter_mock.svg';
 import exit from '../../resources/X.svg';
@@ -35,8 +36,7 @@ const PostModal = () =>  {
                 <div className="post-header">
                     <div className="title-container">
                         <div className="voter">
-                            <img src={voterMock} alt=""/>
-                            {/* <Voter score={score} /> */}
+                            <Voter score={score} />
                         </div>
                         <div className="title">
                             <p>
