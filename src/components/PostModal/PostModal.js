@@ -2,6 +2,7 @@ import React from 'react';
 import CommentsList from '../CommentsList/CommentsList.js';
 import mockJson from '../../mock/reddit-post-mock.json';
 import voterMock from '../../resources/voter_mock.svg';
+import exit from '../../resources/X.svg';
 import './PostModal.css';
 
 
@@ -27,6 +28,9 @@ const PostModal = () =>  {
 
 	return (
 	    <div className="PostModal">
+            <div id="exit-button">
+                <img src={exit} alt="" />
+            </div>
             <div className="post-container">
                 <div className="post-header">
                     <div className="title-container">
