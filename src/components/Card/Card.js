@@ -1,7 +1,7 @@
 import React from 'react';
+import Voter from '../Voter/Voter.js';
 import mockJson from '../../mock/reddit-all-mock.json';
 import comment from '../../resources/comment.svg';
-import voterMock from '../../resources/voter_mock.svg';
 import './Card.css';
 
 // An array of post objects is available at mockJson.data.children
@@ -30,8 +30,7 @@ const Card = () =>  {
             <div className="post-header">
                 <div className="title-container">
                     <div className="voter">
-                        <img src={voterMock} alt=""/>
-                        {/* <Voter score={score} /> */}
+                        <Voter score={score} />
                     </div>
                     <div className="title">
                         <p>
