@@ -1,4 +1,5 @@
 import React from 'react';
+import Voter from '../Voter/Voter.js';
 import './Comment.css';
 import voterMock from '../../resources/voter_mock.svg';
   
@@ -11,7 +12,7 @@ import voterMock from '../../resources/voter_mock.svg';
     return (
 	  <div className="Comment">
         <div className="voter-container">
-            <img src={voterMock} alt="" />
+            <Voter score={score}/>
         </div>
         <div className="comment-content">
             <p class="author">{author}</p>
