@@ -4,13 +4,16 @@ import Card from '../Card/Card.js';
 import PostModal from '../PostModal/PostModal.js';
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
+import mockJson from '../../mock/reddit-all-mock.json';
 
 
+const Feed = () =>  {
 
+  const postArray = mockJson.data.children;
   
-  const Feed = () =>  {
-	return (
-	  <div className="Feed">
+
+  return (
+    <div className="Feed">
         <header>
             <div id="filters">
                 <ul>
@@ -29,14 +32,15 @@ import searchIcon from '../../resources/Search Icon.svg';
             </div>
         </header>
         <div id="content-container">
-          <Card />
+          {postArray.map((post, index) => {
+            return <Card key={index} post={post}/>
+          })}
         </div>
         <div id="modal-container">
           <PostModal />
         </div>
-	  </div>
-	);
-  }
+    </div>
+  );
+}
   
   export default Feed;
-  

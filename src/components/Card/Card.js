@@ -7,26 +7,26 @@ import './Card.css';
 // An array of post objects is available at mockJson.data.children
 // Relevant properties in 
 
-const Card = () =>  {
+const Card = ({ key, post }) =>  {
     
-    const postArray = mockJson.data.children;
+    if (post.data.is_gallery == true || post.data.post_hint !== "hosted:video") {
+        return
+    }
 
-    const postHint = postArray[4].data.post_hint;
-
-    const title = postArray[4].data.title;
-    const description = postArray[4].data.selftext;
-    const author = postArray[4].data.author;
-    const subreddit = postArray[4].data.subreddit_name_prefixed;
-    const score = postArray[4].data.score;
-    const thumbnailUrl = postArray[4].data.thumbnail;
-    //const url = postArray[4].data.url;
-    const url = postArray[4].data.media.reddit_video.fallback_url;
-    const numComments = postArray[4].data.num_comments;
+    const title = post.data.title;
+    const description = post.data.selftext;
+    const author = post.data.author;
+    const subreddit = post.data.subreddit_name_prefixed;
+    const score = post.data.score;
+    const thumbnailUrl = post.data.thumbnail;
+    //const url = post.data.url;
+    const url = post.data.media.reddit_video.fallback_url;
+    const numComments = post.data.num_comments;
 
     console.log(url);
 
 	return (
-	    <div className="Card">
+	    <div id={key} className="Card">
             <div className="post-header">
                 <div className="title-container">
                     <div className="voter">
