@@ -43,21 +43,6 @@ const Card = ({ key, post }) =>  {
             <div className="media">
                 <Media post={post} title={title} />
             </div>
-            {/*<div className="media">
-                {postHint === "hosted:video" ? (
-                    <div className="video-container">
-                        <video src={url} controls></video>
-                    </div>
-                ) : postHint === "image" ? (
-                    <div className="image-container">
-                        <img src={url} alt={title}/>
-                    </div>
-                ) : postHint === "link" ? (
-                    <div className="link-container">
-                        <a href={url} target="_blank" rel="noreferrer">{url}</a>
-                    </div>
-                ) : null }
-            </div>*/}
             <div className="post-footer">
                 <div className="child subreddit-of-post">
                     <p>{subreddit}</p>
