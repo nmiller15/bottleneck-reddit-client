@@ -9,18 +9,33 @@ import './Card.css';
 
 const Card = ({ key, post }) =>  {
     
-    if (post.data.is_gallery == true || post.data.post_hint !== "hosted:video") {
+    if (!post.data.post_hint) {
         return
     }
+    const postHint = post.data.post_hint;
 
     const title = post.data.title;
     const description = post.data.selftext;
     const author = post.data.author;
     const subreddit = post.data.subreddit_name_prefixed;
     const score = post.data.score;
-    const thumbnailUrl = post.data.thumbnail;
-    //const url = post.data.url;
-    const url = post.data.media.reddit_video.fallback_url;
+    let url;
+    
+
+    if (postHint === "hosted:video") {
+        url = post.data.media.reddit_video.fallback_url;
+      } else if (postHint === "image") {
+        url = post.data.url_overridden_by_dest;
+        console.log("image located at: " + url);
+      } else if (postHint === "link") {
+        url = post.data.url;
+        console.log("link located at: " + url);
+      } else {
+        return null;
+      }
+    
+    
+
     const numComments = post.data.num_comments;
 
     console.log(url);
@@ -44,8 +59,20 @@ const Card = ({ key, post }) =>  {
                     </p>
                 </div>
             </div>
-            <div className="video-container">
-                <video src={url} controls></video>
+            <div className="media">
+                {postHint === "hosted:video" ? (
+                    <div className="video-container">
+                        <video src={url} controls></video>
+                    </div>
+                ) : postHint === "image" ? (
+                    <div className="image-container">
+                        <img src={url} alt={title}/>
+                    </div>
+                ) : postHint === "link" ? (
+                    <div className="link-container">
+                        <a href={url} target="_blank" rel="noreferrer">{url}</a>
+                    </div>
+                ) : null }
             </div>
             <div className="post-footer">
                 <div className="child subreddit-of-post">
