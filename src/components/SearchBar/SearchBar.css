@@ -1,0 +1,20 @@
+.SearchBar {
+    font-family: Poppins, sans-serif;
+}
+
+#text-field {
+    height: 28px;
+    border: 2px solid var(--rusty-red);
+    border-radius: 5px;
+    margin-right: 1rem;
+    width: 16rem;
+    background-color: rgba(230, 139, 145, 15%);
+}
+
+#submit-button {
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: var(--snow);
+    background: linear-gradient(180deg, #E4666F 1%, #E4666F 62%, #7E383D 100%)
+}

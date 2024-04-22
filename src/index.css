@@ -5,9 +5,16 @@
   --coral: #e68b91;
   --accent-pink: #e4666f;
   --transparent-white: rgba(255, 255, 255, 15%);
+  --down-arrow: #ADB0F7;
 }
+
+
+/** {
+  outline: 1px solid lightcoral;
+}*/
 
 body {
   font-family: Poppins, sans-serif;
+  margin: 0;
 }
 

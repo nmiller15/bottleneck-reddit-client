@@ -1,0 +1,37 @@
+.Voter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.score-container {
+    font-size: inherit;
+}
+
+
+.down-arrow-container {
+    transform: rotate(180deg) translateX(1%);
+}
+
+.up-arrow-container svg path:hover {
+    fill: var(--coral);
+    cursor: pointer;
+}
+
+.up-arrow-container svg path:active {
+    fill: var(--accent-pink);
+    stroke: var(--accent-pink);
+}
+
+.down-arrow-container svg path:hover {
+    fill: var(--down-arrow);
+    stroke: var(--down-arrow);
+    cursor: pointer;
+}
+
+.down-arrow-container svg path:active {
+    fill: #8084f7;
+    stroke: #8084f7;
+}
