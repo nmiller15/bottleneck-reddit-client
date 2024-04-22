@@ -1,5 +1,6 @@
 import React from 'react';
 import Voter from '../Voter/Voter.js';
+import Media from '../Media/Media.js';
 import mockJson from '../../mock/reddit-all-mock.json';
 import comment from '../../resources/comment.svg';
 import './Card.css';
@@ -9,7 +10,7 @@ import './Card.css';
 
 const Card = ({ key, post }) =>  {
     
-    if (post.data.is_gallery == true || post.data.post_hint !== "hosted:video") {
+    if (!post || post.data.is_gallery === true) {
         return
     }
 
@@ -18,12 +19,7 @@ const Card = ({ key, post }) =>  {
     const author = post.data.author;
     const subreddit = post.data.subreddit_name_prefixed;
     const score = post.data.score;
-    const thumbnailUrl = post.data.thumbnail;
-    //const url = post.data.url;
-    const url = post.data.media.reddit_video.fallback_url;
     const numComments = post.data.num_comments;
-
-    console.log(url);
 
 	return (
 	    <div id={key} className="Card">
@@ -44,8 +40,8 @@ const Card = ({ key, post }) =>  {
                     </p>
                 </div>
             </div>
-            <div className="video-container">
-                <video src={url} controls></video>
+            <div className="media">
+                <Media post={post} title={title} />
             </div>
             <div className="post-footer">
                 <div className="child subreddit-of-post">

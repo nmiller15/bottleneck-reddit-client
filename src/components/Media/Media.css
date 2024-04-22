@@ -1,0 +1,48 @@
+.Media
+
+.media-container {
+    background-color: #4A3030;
+    display: flex;
+    border-radius: 10px;
+    max-height: 600px;
+    overflow: clip;
+}
+ 
+.media-container video {
+    margin: auto;
+    max-width: 722px;
+    max-height: 600px;
+    height: 100%;
+    object-fit: contain;
+}
+
+.media-container img {
+    margin: auto;
+    max-width: 722px;
+    max-height: 600px;
+    height: 100%;
+    object-fit: contain;
+}
+
+.link-container {
+    margin-left: 48px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    border-radius: 8px;
+    background-color: var(--coral);
+    box-shadow: 2px 2px 3px rgba(0,0,0, 15%);
+    border: 2px var(--accent-pink);
+    transition: background-color .15s ease-in-out;
+}
+
+.link-container:hover {
+    cursor: pointer;
+    background-color: var(--rusty-red);
+}
+
+.link-container a {
+    color: var(--snow);
+}
