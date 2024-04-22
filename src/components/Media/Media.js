@@ -24,11 +24,11 @@ import './Media.css';
 	return (
 		<div className="Media">
 			{postHint === "hosted:video" ? (
-				<div className="video-container">
+				<div className="media-container">
 					<video src={url} controls></video>
 				</div>
 			) : postHint === "image" ? (
-				<div className="image-container">
+				<div className="media-container">
 					<img src={url} alt={title}/>
 				</div>
 			) : postHint === "link" ? (
