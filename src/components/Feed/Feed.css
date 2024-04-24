@@ -54,11 +54,11 @@ header {
 
 #content-container {
     padding: 1rem 4rem;
+    display: none;
 }
 
 #modal-container {
     padding: 1rem 4rem;
-    display: none;
 }
 
 .mock-post {
