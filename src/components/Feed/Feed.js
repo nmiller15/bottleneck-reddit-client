@@ -15,7 +15,6 @@ const Feed = () =>  {
   return (
     <div className="Feed">
         <header>
-          <div className="flex-container">
             <div id="filters">
                 <ul>
                     <li>Best</li>
@@ -31,7 +30,6 @@ const Feed = () =>  {
             <div id="search-icon-container">
                 <img src={searchIcon} alt="search"/>
             </div>
-          </div>
         </header>
         <div id="content-container">
           {postArray.map((post, index) => {
