@@ -55,7 +55,7 @@
 }
 
 .comment-button:hover {
-   background-color: #B05B60;
+   background-color: var(--rusty-red);
    cursor: pointer;
 }
 

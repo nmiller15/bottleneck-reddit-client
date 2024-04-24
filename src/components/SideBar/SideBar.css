@@ -1,6 +1,7 @@
 .SideBar {
     height: 97vh;
-    width: 20rem;
+    width: var(--sidebar-width);
+    min-width: 20rem;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -28,7 +29,7 @@ h1 {
 
 #headline-container {
     display: flex;
-    width: inherit;
+    width: 100%;
     margin: 0 auto 10px auto;
     justify-content: center;
 
@@ -174,6 +175,7 @@ h1 {
 
 #cta-button:hover {
     background: linear-gradient(180deg, #FFD5D8, #FFD5D8 53%, #949494 100%);
+    cursor: pointer;
 }
 
 #cta-button a {
