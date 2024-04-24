@@ -1,6 +1,7 @@
 .SideBar {
     height: 97vh;
     width: var(--sidebar-width);
+    min-width: 20rem;
     position: fixed;
     display: flex;
     flex-direction: column;

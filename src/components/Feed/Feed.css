@@ -1,10 +1,10 @@
 .Feed {
     background-color: var(--snow);
     color: var(--black);
+    width: var(--feed-width);
     margin-left: 22rem;
     margin-top: 0;
     top: 0;
-    height: 100vh;
 }
 
 p {
@@ -13,10 +13,22 @@ p {
 }
 
 header {
+    position: fixed;
+    width: 100%;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-shrink: 1;
+    z-index: 10;
+    padding: 1rem 1rem 1rem 24rem;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+.flex-container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
-    background: transparent;
 }
 
 #filters ul {
@@ -42,6 +54,7 @@ header {
 
 #filters li:hover {
     background: linear-gradient(90deg, #E4666F, #E4666F 25%, #C0454D 100%);
+    cursor: pointer;
 }
 
 #search-bar-container {
@@ -52,12 +65,16 @@ header {
     height: 28px;
 }
 
+#search-icon-container:hover {
+    cursor: pointer;
+}
+
 #content-container {
-    padding: 1rem 4rem;
+    padding: 5rem 4rem 1rem 4rem;
 }
 
 #modal-container {
-    padding: 1rem 4rem;
+    padding: 5rem 4rem 1rem 4rem;
     display: none;
 }
 
