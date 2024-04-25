@@ -93,7 +93,7 @@ const PostModal = ( /*{ permalink }*/ ) =>  {
                 </div>
             </div>
             <div className="comments-container">
-                <h3>Comments <span class="accent">({postData.numComments})</span></h3>
+                <h3>Comments <span className="accent">({postData.numComments})</span></h3>
                 <CommentsList comments={postData.commentArray} />
             </div>
       </div>
