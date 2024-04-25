@@ -1,5 +1,5 @@
 import React from 'react';
-import Voter from '../Voter/Voter.js';
+import Voter from '../../features/Voter/Voter.js';
 import Media from '../Media/Media.js';
 import mockJson from '../../mock/reddit-all-mock.json';
 import comment from '../../resources/comment.svg';

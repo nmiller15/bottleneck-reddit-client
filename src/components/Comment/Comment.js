@@ -1,5 +1,5 @@
 import React from 'react';
-import Voter from '../Voter/Voter.js';
+import Voter from '../../features/Voter/Voter.js';
 import './Comment.css';
 import voterMock from '../../resources/voter_mock.svg';
   
