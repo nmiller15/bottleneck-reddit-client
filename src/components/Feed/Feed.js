@@ -1,7 +1,8 @@
 import React from 'react';
-import SearchBar from '../SearchBar/SearchBar.js';
+import SearchBar from '../../features/SearchBar/SearchBar.js';
 import Card from '../Card/Card.js';
-import PostModal from '../PostModal/PostModal.js';
+import PostModal from '../../features/PostModal/PostModal.js';
+import Filters from '../../features/Filters/Filters.js';
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
 import mockJson from '../../mock/reddit-all-mock.json';
@@ -15,15 +16,7 @@ const Feed = () =>  {
   return (
     <div className="Feed">
         <header>
-            <div id="filters">
-                <ul>
-                    <li>Best</li>
-                    <li>Hot</li>
-                    <li>New</li>
-                    <li>Top</li>
-                    <li>Rising</li>
-                </ul>
-            </div>
+            <Filters />
             <div id="search-bar-container">
               <SearchBar />
             </div>
