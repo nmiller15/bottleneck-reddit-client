@@ -1,14 +1,7 @@
 import React from 'react';
+import Subreddits from '../Subreddits/Subreddits';
 import './SideBar.css';
 import logo from '../../resources/bottleneck-logo.svg'
-import champagneBottles from '../../resources/champagne-bottles-icon.svg'
-import glassBottleIcon from '../../resources/glass-bottle-icon.svg'
-import whiskeyBottle from '../../resources/fd3d3dfa-b6ef-46bf-a6dc-f7181d62d556.svg'
-import cokeBottle from '../../resources/cola-drink-bottle-icon.svg'
-import waterBottle from '../../resources/pet-bottle-icon.svg'
-import babyBottle from '../../resources/drink-bottle-icon.svg'
-import noLactose from '../../resources/lactose-milk-icon.svg'
-import milkBottle from '../../resources/milk-water-bottle-icon.svg'
   
   const SideBar = () =>  {
 	return (
@@ -24,7 +17,9 @@ import milkBottle from '../../resources/milk-water-bottle-icon.svg'
         <div id="tagline">
             <p>Browsing the front page of the internet,<br/> one minute at a time... </p>
         </div>
-        <div id="subreddit-list">
+        
+        <Subreddits />
+        {/* <div id="subreddit-list">
             <ul>
                 <li className="subreddit">
                     <a href="#" target="_blank">
@@ -123,7 +118,7 @@ import milkBottle from '../../resources/milk-water-bottle-icon.svg'
                     </a>
                 </li>
             </ul>
-        </div>
+        </div> */}
         <div id="counter">
             <div id="clock-container">
                 <p>0:15</p>
