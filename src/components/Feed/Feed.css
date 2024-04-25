@@ -33,17 +33,16 @@ header {
 
 #filters li {
     display: inline-block;
-    width: 90px;
+    width: 2.5rem;
     border-radius: 20px;
     outline: 1px solid #E4666F;
     background: linear-gradient(90deg, #E4666F, #E4666F 50%, #C0454D 100%);
     transition: background .15s ease-in-out;
     text-align: center;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    font-size: 14px;
+    padding: 2px 7px;
+    font-size: 10px;
     color: var(--snow);
-    margin: 0 20px 0 0;
+    margin: 0 15px 0 0;
 }
 
 #filters li:hover {
@@ -64,7 +63,7 @@ header {
 }
 
 #content-container {
-    padding: 5rem 4rem 1rem 4rem;
+    padding: 3.5rem 4rem 1rem 4rem;
 }
 
 #modal-container {
