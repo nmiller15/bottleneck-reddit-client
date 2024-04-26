@@ -43,6 +43,9 @@ header {
 
 #modal-container {
     padding: 5rem 4rem 1rem 4rem;
+}
+
+.hide {
     display: none;
 }
 

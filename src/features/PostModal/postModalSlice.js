@@ -1,14 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const initialState = {
+    isActive: false,
+}
+
 const options = {
     name: 'postModal',
-    initialState: [], 
+    initialState,
     reducers: {
-
+        toggleModal: (state) => {
+            state.isActive = !state.isActive
+            return state;
+        },
     }
 }
 
 const postModalSlice = createSlice(options);
 
-// export your actions with export const { named actions } = postModalSlice.actions;
+export const { toggleModal } = postModalSlice.actions;
 export default postModalSlice.reducer 

@@ -7,11 +7,20 @@ import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
 import mockJson from '../../mock/reddit-all-mock.json';
 
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleModal } from '../../features/PostModal/postModalSlice.js';
 
 const Feed = () =>  {
 
   const postArray = mockJson.data.children;
-  
+  const modalIsActive = useSelector((state) => state.postModal.isActive);
+  const dispatch = useDispatch();
+
+  const dispatchToggleModal = () => {
+    console.log("toggle dispatched");
+    dispatch(toggleModal());
+    console.log("modalIsActive? - ", modalIsActive);
+  }
 
   return (
     <div className="Feed">
@@ -24,13 +33,19 @@ const Feed = () =>  {
                 <img src={searchIcon} alt="search"/>
             </div>
         </header>
-        <div id="content-container">
+        <div 
+          id="content-container"
+          className={modalIsActive ? "" : "hide"}
+        >
           {postArray.map((post, index) => {
-            return <Card key={index} post={post}/>
+            return <Card key={index} post={post} toggle={dispatchToggleModal}/>
           })}
         </div>
-        <div id="modal-container">
-          <PostModal />
+        <div 
+          id="modal-container" 
+          className={modalIsActive ? "hide" : ""}
+        >
+          <PostModal toggle={dispatchToggleModal} />
         </div>
     </div>
   );

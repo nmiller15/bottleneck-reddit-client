@@ -12,7 +12,7 @@ import './PostModal.css';
 // Sample video perma: "permalink": "/r/Damnthatsinteresting/comments/1c6hah3/ojs_reaction_when_confronted_with_a_photo_of_him/",
 // Sample link perma: "permalink": "/r/nba/comments/1c6dz5u/charania_raptors_jontay_porter_has_received_a/",
 
-const PostModal = ( /*{ permalink }*/ ) =>  {
+const PostModal = ({ toggle/*, permalink */}) =>  {
     // Mocked permalink prop
     const permalink = "/r/Damnthatsinteresting/comments/1c6hah3/ojs_reaction_when_confronted_with_a_photo_of_him/"
     const [postData, setPostData] = useState(null);
@@ -59,7 +59,7 @@ const PostModal = ( /*{ permalink }*/ ) =>  {
 
 	return (
 	       <div className="PostModal">
-            <div id="exit-button">
+            <div id="exit-button" onClick={toggle}>
                 <img src={exit} alt="" />
             </div>
             <div className="post-container">

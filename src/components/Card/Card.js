@@ -8,7 +8,7 @@ import './Card.css';
 // An array of post objects is available at mockJson.data.children
 // Relevant properties in 
 
-const Card = ({ key, post }) =>  {
+const Card = ({ key, post, toggle }) =>  {
     
     if (!post || post.data.is_gallery === true) {
         return
@@ -48,7 +48,7 @@ const Card = ({ key, post }) =>  {
                     <p>{subreddit}</p>
                 </div>
                 <div className="comment-button-container">
-                    <div className="comment-button">
+                    <div className="comment-button" onClick={toggle}>
                         <p>{numComments}</p>
                         <img src={comment}  alt=''/>
                     </div>
