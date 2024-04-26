@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     isActive: false,
+    permalink: ""
 }
 
 const options = {
@@ -12,10 +13,14 @@ const options = {
             state.isActive = !state.isActive
             return state;
         },
+        setPermalink: (state, action) => {
+            state.permalink = action.payload;
+            return state;
+        }
     }
 }
 
 const postModalSlice = createSlice(options);
 
-export const { toggleModal } = postModalSlice.actions;
+export const { toggleModal, setPermalink } = postModalSlice.actions;
 export default postModalSlice.reducer 
