@@ -25,15 +25,11 @@ header {
     justify-content: space-between;
 }
 
-#search-bar-container {
-    display: none;
-}
-
 #search-icon-container img {
     height: 28px;
 }
 
-#search-icon-container:hover {
+#search-icon-container img:hover {
     cursor: pointer;
 }
 

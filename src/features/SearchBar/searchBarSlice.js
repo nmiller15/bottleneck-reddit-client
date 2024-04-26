@@ -8,8 +8,12 @@ const options = {
     name: 'searchBar',
     initialState, 
     reducers: {
-        toggleSearchBar: (state) => {
-            state.isActive = !state.isActive
+        activateSearchBar: (state) => {
+            state.isActive = true;
+            return state;
+        },
+        deactivateSearchBar: (state) => {
+            state.isActive = false;
             return state;
         }
     }
@@ -17,5 +21,5 @@ const options = {
 
 const searchBarSlice = createSlice(options);
 
-export const { toggleSearchBar } = searchBarSlice.actions;
+export const { activateSearchBar, deactivateSearchBar } = searchBarSlice.actions;
 export default searchBarSlice.reducer;

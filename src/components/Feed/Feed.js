@@ -9,7 +9,7 @@ import mockJson from '../../mock/reddit-all-mock.json';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal, setPermalink } from '../../features/PostModal/postModalSlice.js';
-import { toggleSearchBar } from '../../features/SearchBar/searchBarSlice.js';
+import { activateSearchBar, deactivateSearchBar } from '../../features/SearchBar/searchBarSlice.js';
 
 const Feed = () =>  {
   // bring in mocked front page data: probably will do this with the subreddits initial state in the end
@@ -29,24 +29,29 @@ const Feed = () =>  {
     dispatch(toggleModal());
   }
 
-  const dispatchToggleSearchBar = () => {
-    dispatch(toggleSearchBar());
-  } 
+  const dispatchActivateSearchBar = () => {
+    dispatch(activateSearchBar());
+  }
+
+  const dispatchDeactivateSearchBar = () => {
+    dispatch(deactivateSearchBar());
+  }
 
   return (
     <div className="Feed">
         <header>
             <Filters />
-            <div id="search-bar-container">
-              <SearchBar />
-            </div>
-            <div id="search-icon-container" onClick={dispatchToggleSearchBar}>
+            <div id="search-icon-container" onClick={dispatchActivateSearchBar}>
+                { searchBarIsActive ? 
+                  <SearchBar /> :
                 <img src={searchIcon} alt="search"/>
+                }
             </div>
         </header>
         <div 
           id="content-container"
           className={modalIsActive ? "hide" : ""}
+          onClick={dispatchDeactivateSearchBar}
         >
           {postArray.map((post, index) => {
             return <Card key={index} post={post} toggle={dispatchToggleModal}/>
