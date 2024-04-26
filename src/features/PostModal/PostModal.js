@@ -29,9 +29,9 @@ const PostModal = ({ toggle, permalink }) =>  {
                 if (!response.ok) {
                     throw new Error('Network response failed.');
                 }
-                console.log(response);
+                // console.log(response);
                 const postArray = await response.json();
-                console.log(postArray);
+                // console.log(postArray);
                 // Handle any errors, and filter out galleries
                 if (!postArray || postArray[0].data.children[0].data.is_gallery === true) {
                     return;
