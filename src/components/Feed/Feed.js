@@ -9,17 +9,29 @@ import mockJson from '../../mock/reddit-all-mock.json';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal, setPermalink } from '../../features/PostModal/postModalSlice.js';
+import { toggleSearchBar } from '../../features/SearchBar/searchBarSlice.js';
 
 const Feed = () =>  {
-
+  // bring in mocked front page data: probably will do this with the subreddits initial state in the end
   const postArray = mockJson.data.children;
+
+  // State variables for PostModal
   const modalIsActive = useSelector((state) => state.postModal.isActive);
   const permalink = useSelector((state) => state.postModal.permalink);
+
+  // State variables for SearchBar
+  const searchBarIsActive = useSelector((state) => state.searchBar.isActive);
+
   const dispatch = useDispatch();
 
+  // State manipulation callbacks
   const dispatchToggleModal = () => {
     dispatch(toggleModal());
   }
+
+  const dispatchToggleSearchBar = () => {
+    dispatch(toggleSearchBar());
+  } 
 
   return (
     <div className="Feed">
@@ -28,7 +40,7 @@ const Feed = () =>  {
             <div id="search-bar-container">
               <SearchBar />
             </div>
-            <div id="search-icon-container">
+            <div id="search-icon-container" onClick={dispatchToggleSearchBar}>
                 <img src={searchIcon} alt="search"/>
             </div>
         </header>

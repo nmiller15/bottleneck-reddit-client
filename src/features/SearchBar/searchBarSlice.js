@@ -1,14 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const initialState = {
+    isActive: false,
+}
+
 const options = {
     name: 'searchBar',
-    initialState: [], 
+    initialState, 
     reducers: {
-
+        toggleSearchBar: (state) => {
+            state.isActive = !state.isActive
+            return state;
+        }
     }
 }
 
 const searchBarSlice = createSlice(options);
 
-// export your actions with export const { named actions } = postModalSlice.actions;
+export const { toggleSearchBar } = searchBarSlice.actions;
 export default searchBarSlice.reducer;
