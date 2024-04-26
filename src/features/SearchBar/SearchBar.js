@@ -1,11 +1,40 @@
 import React from 'react';
 import './SearchBar.css';
-  
+import { useState } from 'react';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { setSearchText, deactivateSearchBar } from './searchBarSlice';
+
   const SearchBar = () =>  {
+  const [inputValue, setInputValue] = useState('');
+  const searchText = useSelector((state) => state.searchText);
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => setInputValue(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(setSearchText(inputValue));
+    dispatch(deactivateSearchBar());
+    setInputValue('');
+  }
+  
 	return (
 	    <div id="SearchBar"> 
-            <input id="text-field" type="text" name="search"/>
-            <input id="submit-button" type="submit" value="Search"/>
+        <form onSubmit={handleSubmit}>
+            <input 
+              id="text-field" 
+              type="text" 
+              name="search" 
+              value={inputValue}
+              onChange={handleChange}
+            />
+            <input 
+              id="submit-button" 
+              type="submit" 
+              value="Search"
+            />
+        </form>
 	    </div>
 	);
   }

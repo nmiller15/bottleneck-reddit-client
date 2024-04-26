@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     isActive: false,
+    searchText: ''
 }
 
 const options = {
@@ -14,6 +15,10 @@ const options = {
         },
         deactivateSearchBar: (state) => {
             state.isActive = false;
+            return state;   
+        },
+        setSearchText: (state, action) => {
+            state.searchText = action.payload;
             return state;
         }
     }
@@ -21,5 +26,5 @@ const options = {
 
 const searchBarSlice = createSlice(options);
 
-export const { activateSearchBar, deactivateSearchBar } = searchBarSlice.actions;
+export const { activateSearchBar, deactivateSearchBar, setSearchText } = searchBarSlice.actions;
 export default searchBarSlice.reducer;
