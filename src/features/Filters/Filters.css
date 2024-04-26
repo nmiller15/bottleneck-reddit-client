@@ -1,0 +1,24 @@
+#filters ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#filters li {
+    display: inline-block;
+    width: 2.5rem;
+    border-radius: 20px;
+    outline: 1px solid #E4666F;
+    background: linear-gradient(90deg, #E4666F, #E4666F 50%, #C0454D 100%);
+    transition: background .15s ease-in-out;
+    text-align: center;
+    padding: 2px 7px;
+    font-size: 10px;
+    color: var(--snow);
+    margin: 0 15px 0 0;
+}
+
+#filters li:hover {
+    background: linear-gradient(90deg, #E4666F, #E4666F 25%, #C0454D 100%);
+    cursor: pointer;
+}

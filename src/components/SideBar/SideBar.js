@@ -1,5 +1,5 @@
 import React from 'react';
-import Subreddits from '../Subreddits/Subreddits';
+import Subreddits from '../../features/Subreddits/Subreddits';
 import './SideBar.css';
 import logo from '../../resources/bottleneck-logo.svg'
   

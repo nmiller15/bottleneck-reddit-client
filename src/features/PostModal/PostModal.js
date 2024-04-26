@@ -1,21 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import CommentsList from '../CommentsList/CommentsList.js';
+import CommentsList from '../../components/CommentsList/CommentsList.js';
 import Voter from '../Voter/Voter.js';
-import Media from '../Media/Media.js';
+import Media from '../../components/Media/Media.js';
 import mockJson from '../../mock/reddit-post-mock.json';
 import voterMock from '../../resources/voter_mock.svg';
 import exit from '../../resources/X.svg';
 import './PostModal.css';
 
-// Once the store is set up, the comment button must set the permalink and pass it down to this component
-// Sample image perma: "permalink": "/r/pics/comments/1c6e2t7/sarah_huckabee_sanders_paid_19_000_for_this/",
-// Sample video perma: "permalink": "/r/Damnthatsinteresting/comments/1c6hah3/ojs_reaction_when_confronted_with_a_photo_of_him/",
-// Sample link perma: "permalink": "/r/nba/comments/1c6dz5u/charania_raptors_jontay_porter_has_received_a/",
+import { useSelector, useDispatch } from 'react-redux';
+import { setPermalink, setPostData } from '../../features/PostModal/postModalSlice.js';
 
-const PostModal = ( /*{ permalink }*/ ) =>  {
-    // Mocked permalink prop
-    const permalink = "/r/Damnthatsinteresting/comments/1c6hah3/ojs_reaction_when_confronted_with_a_photo_of_him/"
-    const [postData, setPostData] = useState(null);
+const PostModal = ({ toggle, permalink }) =>  {
+    
+    // const [postData, setPostData] = useState(null);
+    const postData = useSelector((state) => state.postModal.postData);
+    const dispatch = useDispatch();
+
+    const handleExitClick = () => {
+        toggle();
+        dispatch(setPermalink(''));
+        dispatch(setPostData(null));
+    }
 
     useEffect(() => {
         const fetchPostData = async () => {
@@ -24,25 +29,29 @@ const PostModal = ( /*{ permalink }*/ ) =>  {
                 if (!response.ok) {
                     throw new Error('Network response failed.');
                 }
-                //console.log(response);
+                // console.log(response);
                 const postArray = await response.json();
-                //console.log(postArray);
+                // console.log(postArray);
                 // Handle any errors, and filter out galleries
                 if (!postArray || postArray[0].data.children[0].data.is_gallery === true) {
                     return;
                 }
                 const post = postArray[0].data.children[0];
+                console.log(post); 
                 
-                setPostData({
-                    title: post.data.title,
-                    description: post.data.selftext,
-                    author: post.data.author,
-                    subreddit: post.data.subreddit_name_prefixed,
-                    score: post.data.score,
-                    numComments: post.data.num_comments,
-                    commentArray: mockJson[1].data.children,
-                    post: post
-                })
+                dispatch(
+                    setPostData({
+                        title: post.data.title,
+                        description: post.data.selftext,
+                        author: post.data.author,
+                        subreddit: post.data.subreddit_name_prefixed,
+                        score: post.data.score,
+                        numComments: post.data.num_comments,
+                        commentArray: postArray[1].data.children,
+                        postHint: post.data.post_hint,
+                        post,
+                    })
+                )
                 
                 
             } catch (error) {
@@ -51,15 +60,19 @@ const PostModal = ( /*{ permalink }*/ ) =>  {
         };
 
         fetchPostData();
-    }, [permalink]); // Run this effect with permalink changes
+    }, [permalink, dispatch]); // Run this effect with permalink changes
     
     if (!postData) {
         return <div>Loading...</div>;
     }
 
+    if (!permalink) {
+        return <div>No Post Selected</div>
+    }
+
 	return (
 	       <div className="PostModal">
-            <div id="exit-button">
+            <div id="exit-button" onClick={handleExitClick}>
                 <img src={exit} alt="" />
             </div>
             <div className="post-container">
@@ -81,7 +94,7 @@ const PostModal = ( /*{ permalink }*/ ) =>  {
                     </div>
                 </div>
                 <div className="media">
-                    <Media post={postData.post} title={postData.title}/>
+                    <Media post={postData.post} title={postData.title} postHint={postData.postHint}/>
                 </div>
                 <div className="post-footer">
                     <div className="child subreddit-of-post">
@@ -93,7 +106,7 @@ const PostModal = ( /*{ permalink }*/ ) =>  {
                 </div>
             </div>
             <div className="comments-container">
-                <h3>Comments <span class="accent">({postData.numComments})</span></h3>
+                <h3>Comments <span className="accent">({postData.numComments})</span></h3>
                 <CommentsList comments={postData.commentArray} />
             </div>
       </div>
