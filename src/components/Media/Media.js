@@ -1,13 +1,11 @@
 import React from 'react';
 import './Media.css';
   
-  const Media = ({ post, title }) =>  {
+  const Media = ({ post, title, postHint }) =>  {
 
-	if (!post.data.post_hint) {
+	if (!post) {
         return
     }
-
-	const postHint = post.data.post_hint;
 
 	let url;
     

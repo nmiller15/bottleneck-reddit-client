@@ -8,18 +8,17 @@ import searchIcon from '../../resources/Search Icon.svg';
 import mockJson from '../../mock/reddit-all-mock.json';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleModal } from '../../features/PostModal/postModalSlice.js';
+import { toggleModal, setPermalink } from '../../features/PostModal/postModalSlice.js';
 
 const Feed = () =>  {
 
   const postArray = mockJson.data.children;
   const modalIsActive = useSelector((state) => state.postModal.isActive);
+  const permalink = useSelector((state) => state.postModal.permalink);
   const dispatch = useDispatch();
 
   const dispatchToggleModal = () => {
-    console.log("toggle dispatched");
     dispatch(toggleModal());
-    console.log("modalIsActive? - ", modalIsActive);
   }
 
   return (
@@ -35,7 +34,7 @@ const Feed = () =>  {
         </header>
         <div 
           id="content-container"
-          className={modalIsActive ? "" : "hide"}
+          className={modalIsActive ? "hide" : ""}
         >
           {postArray.map((post, index) => {
             return <Card key={index} post={post} toggle={dispatchToggleModal}/>
@@ -43,9 +42,9 @@ const Feed = () =>  {
         </div>
         <div 
           id="modal-container" 
-          className={modalIsActive ? "hide" : ""}
+          className={modalIsActive ? "" : "hide"}
         >
-          <PostModal toggle={dispatchToggleModal} />
+          {modalIsActive && <PostModal toggle={dispatchToggleModal} permalink={permalink} />}
         </div>
     </div>
   );

@@ -2,7 +2,18 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     isActive: false,
-    permalink: ""
+    permalink: "", 
+    postData: {
+        title: '',
+        description: '',
+        author: '',
+        subreddit: '',
+        score: null,
+        numComments: null,
+        commentArray: [],
+        postHint: null,
+        post: {}
+    }
 }
 
 const options = {
@@ -16,11 +27,15 @@ const options = {
         setPermalink: (state, action) => {
             state.permalink = action.payload;
             return state;
+        },
+        setPostData: (state, action) => {
+            state.postData = action.payload;
+            return state;
         }
     }
 }
 
 const postModalSlice = createSlice(options);
 
-export const { toggleModal, setPermalink } = postModalSlice.actions;
+export const { toggleModal, setPermalink, setPostData } = postModalSlice.actions;
 export default postModalSlice.reducer 
