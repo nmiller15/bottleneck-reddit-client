@@ -6,11 +6,11 @@ import Filters from '../../features/Filters/Filters.js';
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
 import mockJson from '../../mock/reddit-all-mock.json';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal, setPermalink } from '../../features/PostModal/postModalSlice.js';
-import { activateSearchBar, deactivateSearchBar } from '../../features/SearchBar/searchBarSlice.js';
+import { activateSearchBar, deactivateSearchBar, setSearchText } from '../../features/SearchBar/searchBarSlice.js';
 
 const Feed = () =>  {
   // bring in mocked front page data: probably will do this with the subreddits initial state in the end
@@ -40,7 +40,26 @@ const Feed = () =>  {
     dispatch(deactivateSearchBar());
   }
 
+  const dispatchClearSearch = () => {
+    dispatch(setSearchText(''));
+  }
+
   const reRender = () => setRender(!render);
+
+  const handleScroll = () => {
+    if (searchBarIsActive) {
+      console.log("DISPATCH DISPATCH!!");
+      dispatchDeactivateSearchBar();
+    }
+  }
+
+  // Close the search bar on the widow scroll
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    return () => { 
+      window.removeEventListener("scroll", handleScroll);
+    }
+  })
 
   return (
     <div className="Feed">
@@ -58,8 +77,11 @@ const Feed = () =>  {
           className={modalIsActive ? "hide" : ""}
           onClick={dispatchDeactivateSearchBar}
         >
+          { searchText && <button id="clear-search" onClick={dispatchClearSearch}>Clear Search Filter</button>}
           {postArray.map((post, index) => {
-            if(searchText && !post.data.title.includes(searchText)) return;
+            const lcTitle = post.data.title.toLowerCase();
+            const lcSearchText = searchText.toLowerCase();
+            if(searchText && !lcTitle.includes(lcSearchText)) return;
             return <Card key={index} post={post} toggle={dispatchToggleModal}/>
           })}
         </div>
