@@ -48,7 +48,6 @@ const Feed = () =>  {
 
   const handleScroll = () => {
     if (searchBarIsActive) {
-      console.log("DISPATCH DISPATCH!!");
       dispatchDeactivateSearchBar();
     }
   }
