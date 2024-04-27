@@ -13,6 +13,7 @@ import { setPermalink } from '../../features/PostModal/postModalSlice.js';
 
 const Card = ({ key, post, toggle }) =>  {
     
+    const searchText = useSelector((state) => state.searchText);
     const dispatch = useDispatch();
     const passPermalink = (link) => dispatch(setPermalink(link));
 
@@ -25,50 +26,51 @@ const Card = ({ key, post, toggle }) =>  {
         return
     }
 
-
-
-    const title = post.data.title;
-    const description = post.data.selftext;
-    const author = post.data.author;
-    const subreddit = post.data.subreddit_name_prefixed;
-    const score = post.data.score;
-    const numComments = post.data.num_comments;
-    const postHint = post.data.post_hint;
+    const cardData = {
+        title: post.data.title,
+        description: post.data.selftext,
+        author: post.data.author,
+        subreddit: post.data.subreddit_name_prefixed,
+        score: post.data.score,
+        numComments: post.data.num_comments,
+        postHint: post.data.post_hint,
+        post,
+    }
 
 	return (
 	    <div id={key} className="Card">
             <div className="post-header">
                 <div className="title-container">
                     <div className="voter">
-                        <Voter score={score} />
+                        <Voter score={cardData.score} />
                     </div>
                     <div className="title">
                         <p>
-                            {title}
+                            {cardData.title}
                         </p>
                     </div>
                 </div>
                 <div className="description">
                     <p>
-                        {description}
+                        {cardData.description}
                     </p>
                 </div>
             </div>
             <div className="media">
-                <Media post={post} title={title} postHint={postHint} />
+                <Media post={cardData.post} title={cardData.title} postHint={cardData.postHint} />
             </div>
             <div className="post-footer">
                 <div className="child subreddit-of-post">
-                    <p>{subreddit}</p>
+                    <p>{cardData.subreddit}</p>
                 </div>
                 <div className="comment-button-container">
                     <div className="comment-button" onClick={handleCommentButtonClick}>
-                        <p>{numComments}</p>
+                        <p>{cardData.numComments}</p>
                         <img src={comment}  alt=''/>
                     </div>
                 </div>
                 <div className="child author-of-post">
-                    <p>u/{author}</p>
+                    <p>u/{cardData.author}</p>
                 </div>
             </div>
 	    </div>
