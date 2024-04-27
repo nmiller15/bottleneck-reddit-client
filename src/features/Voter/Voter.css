@@ -6,6 +6,15 @@
     margin-bottom: .5rem;
 }
 
+.up .up-arrow-container svg path {
+    fill: var(--accent-pink);
+}
+
+.down .down-arrow-container svg path {
+    fill: var(--down-arrow);
+    stroke: var(--down-arrow);
+}
+
 .score-container {
     font-size: inherit;
 }
