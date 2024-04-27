@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchText, deactivateSearchBar } from './searchBarSlice';

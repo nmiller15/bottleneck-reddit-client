@@ -65,11 +65,15 @@ const Feed = () =>  {
     <div className="Feed">
         <header>
             <Filters />
-            <div id="search-icon-container" onClick={dispatchActivateSearchBar}>
-                { searchBarIsActive ? 
-                  <SearchBar reRender={reRender} /> :
-                <img src={searchIcon} alt="search"/>
-                }
+            <div id="search-icon-container">
+              { searchText && !searchBarIsActive ?
+                <button id="clear-search" onClick={dispatchClearSearch}>Clear Search Filter</button> :
+                <></>
+              }
+              { searchBarIsActive ? 
+                <SearchBar reRender={reRender} /> :
+                <img src={searchIcon} alt="search" onClick={dispatchActivateSearchBar}/>
+              }
             </div>
         </header>
         <div 
@@ -77,7 +81,6 @@ const Feed = () =>  {
           className={modalIsActive ? "hide" : ""}
           onClick={dispatchDeactivateSearchBar}
         >
-          { searchText && <button id="clear-search" onClick={dispatchClearSearch}>Clear Search Filter</button>}
           {postArray.map((post, index) => {
             const lcTitle = post.data.title.toLowerCase();
             const lcSearchText = searchText.toLowerCase();

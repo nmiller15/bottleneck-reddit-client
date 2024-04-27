@@ -25,6 +25,10 @@ header {
     justify-content: space-between;
 }
 
+#search-icon-container { 
+    display: flex;
+}
+
 #search-icon-container img {
     height: 28px;
 }
@@ -35,6 +39,22 @@ header {
 
 #content-container {
     padding: 3.5rem 4rem 1rem 4rem;
+}
+
+#clear-search {
+    font-family: "Poppins", sans-serif;
+    color: var(--snow);
+    border: 0;
+    background-color: #67676781;
+    border-radius: 10px;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    margin: auto 20px auto 0;
+}
+
+#clear-search:hover {
+    cursor: pointer;
+    background-color: #535252d8;
 }
 
 #modal-container {
