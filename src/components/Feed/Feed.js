@@ -6,7 +6,7 @@ import Filters from '../../features/Filters/Filters.js';
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
 import mockJson from '../../mock/reddit-all-mock.json';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal, setPermalink } from '../../features/PostModal/postModalSlice.js';
@@ -15,8 +15,6 @@ import { activateSearchBar, deactivateSearchBar, setSearchText } from '../../fea
 const Feed = () =>  {
   // bring in mocked front page data: probably will do this with the subreddits initial state in the end
   const postArray = mockJson.data.children;
-
-  const [render, setRender] = useState(false); // toggle this variable to rerender the component
 
   // State variables for PostModal
   const modalIsActive = useSelector((state) => state.postModal.isActive);
@@ -44,8 +42,6 @@ const Feed = () =>  {
     dispatch(setSearchText(''));
   }
 
-  const reRender = () => setRender(!render);
-
   const handleScroll = () => {
     if (searchBarIsActive) {
       dispatchDeactivateSearchBar();
@@ -70,7 +66,7 @@ const Feed = () =>  {
                 <></>
               }
               { searchBarIsActive ? 
-                <SearchBar reRender={reRender} /> :
+                <SearchBar /> :
                 <img src={searchIcon} alt="search" onClick={dispatchActivateSearchBar}/>
               }
             </div>

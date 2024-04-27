@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchText, deactivateSearchBar } from './searchBarSlice';
 
-  const SearchBar = ({ reRender }) =>  {
+  const SearchBar = () =>  {
   const [inputValue, setInputValue] = useState('');
   const searchText = useSelector((state) => state.searchText);
   const dispatch = useDispatch();
@@ -17,7 +17,6 @@ import { setSearchText, deactivateSearchBar } from './searchBarSlice';
     dispatch(setSearchText(inputValue));
     dispatch(deactivateSearchBar());
     setInputValue('');
-    reRender();
   }
   
 	return (
