@@ -9,23 +9,32 @@ import { useState } from 'react';
   
   const Voter = ({ score }) =>  {
     const [voterStatus, setVoterStatus] = useState(''); // '' 'up' 'down'
+    const [numberScore, setNumberScore] = useState(score);
 
-    if (score > 999) {
-        score = bigScore(score);
+    let stringScore;
+
+    if (numberScore > 999) {
+        stringScore = bigScore(numberScore);
+    } else {
+      stringScore = numberScore
     }
 
     const handleUpvoteClick = () => {
       if (voterStatus === "up") {
+        setNumberScore(numberScore - 1);
         setVoterStatus('');
       } else {
+        setNumberScore(numberScore + 1);
         setVoterStatus('up');
       }
     }
 
     const handleDownvoteClick = () => {
       if (voterStatus === "down") {
+        setNumberScore(numberScore + 1);
         setVoterStatus('');
       } else {
+        setNumberScore(numberScore - 1);
         setVoterStatus('down');
       }
     }
@@ -42,7 +51,7 @@ import { useState } from 'react';
             </svg>
           </div>
           <div className="score-container">
-                <p>{score}</p>
+                <p>{stringScore}</p>
           </div>
           <div className="down-arrow-container arrow">
             <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
