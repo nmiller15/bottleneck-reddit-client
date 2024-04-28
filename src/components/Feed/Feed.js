@@ -5,19 +5,17 @@ import PostModal from '../../features/PostModal/PostModal.js';
 import Filters from '../../features/Filters/Filters.js';
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
-import mockJson from '../../mock/reddit-all-mock.json';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleModal, setPermalink } from '../../features/PostModal/postModalSlice.js';
+import { toggleModal } from '../../features/PostModal/postModalSlice.js';
 import { activateSearchBar, deactivateSearchBar, setSearchText } from '../../features/SearchBar/searchBarSlice.js';
 import { setPostArray } from './feedSlice.js';
 
 const Feed = () =>  {
   // bring in mocked front page data: probably will do this with the subreddits initial state in the end
-  // const postArray = mockJson.data.children;
-  //const postArray = useSelector((state) => state.postArray);
-  const [postArray, setPostArray] = useState([]);
+  const postArray = useSelector((state) => state.feed.postArray);
+
 
   // State variables for PostModal
   const modalIsActive = useSelector((state) => state.postModal.isActive);
@@ -73,7 +71,7 @@ const Feed = () =>  {
           return;
         }
         const array = responseObject.data.children;
-        setPostArray(array);
+        dispatch(setPostArray(array));
       } catch (e) {
         console.error(e);
       }
