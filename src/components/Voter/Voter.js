@@ -23,7 +23,11 @@ import { useState } from 'react';
       if (voterStatus === "up") {
         setNumberScore(numberScore - 1);
         setVoterStatus('');
-      } else {
+      } else if (voterStatus === "down") {
+        setNumberScore(numberScore + 2);
+        setVoterStatus('up')
+      }
+      else {
         setNumberScore(numberScore + 1);
         setVoterStatus('up');
       }
@@ -33,6 +37,9 @@ import { useState } from 'react';
       if (voterStatus === "down") {
         setNumberScore(numberScore + 1);
         setVoterStatus('');
+      } else if (voterStatus === "up") {
+        setNumberScore(numberScore - 2);
+        setVoterStatus('down');
       } else {
         setNumberScore(numberScore - 1);
         setVoterStatus('down');
