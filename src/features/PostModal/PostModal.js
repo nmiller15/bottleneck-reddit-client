@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import CommentsList from '../../components/CommentsList/CommentsList.js';
-import Voter from '../Voter/Voter.js';
+import Voter from '../../components/Voter/Voter.js';
 import Media from '../../components/Media/Media.js';
 import mockJson from '../../mock/reddit-post-mock.json';
 import voterMock from '../../resources/voter_mock.svg';
