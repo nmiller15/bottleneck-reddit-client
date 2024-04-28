@@ -5,16 +5,17 @@ import PostModal from '../../features/PostModal/PostModal.js';
 import Filters from '../../features/Filters/Filters.js';
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
-import mockJson from '../../mock/reddit-all-mock.json';
 import { useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleModal, setPermalink } from '../../features/PostModal/postModalSlice.js';
+import { toggleModal } from '../../features/PostModal/postModalSlice.js';
 import { activateSearchBar, deactivateSearchBar, setSearchText } from '../../features/SearchBar/searchBarSlice.js';
+import { setPostArray } from './feedSlice.js';
 
 const Feed = () =>  {
   // bring in mocked front page data: probably will do this with the subreddits initial state in the end
-  const postArray = mockJson.data.children;
+  const postArray = useSelector((state) => state.feed.postArray);
+
 
   // State variables for PostModal
   const modalIsActive = useSelector((state) => state.postModal.isActive);
@@ -56,6 +57,32 @@ const Feed = () =>  {
     }
   })
 
+  useEffect(() => {
+    const fetchPostArray = async () => {
+      try {
+        const response = await fetch('https://www.reddit.com/.json');
+        if (!response.ok) {
+          throw new Error('Network response failed.');
+        }
+        const responseObject = await response.json();
+        console.log(responseObject);
+        if (!responseObject) {
+          console.log('No response object.');
+          return;
+        }
+        const array = responseObject.data.children;
+        dispatch(setPostArray(array));
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    fetchPostArray();
+  }, []);
+
+  if (!postArray) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="Feed">
         <header>
@@ -77,10 +104,10 @@ const Feed = () =>  {
           onClick={dispatchDeactivateSearchBar}
         >
           {postArray.map((post, index) => {
-            const lcTitle = post.data.title.toLowerCase();
-            const lcSearchText = searchText.toLowerCase();
-            if(searchText && !lcTitle.includes(lcSearchText)) return;
-            return <Card key={index} post={post} toggle={dispatchToggleModal}/>
+              const lcTitle = post.data.title.toLowerCase();
+              const lcSearchText = searchText.toLowerCase();
+              if(searchText && !lcTitle.includes(lcSearchText)) return;
+              return <Card key={index} post={post} toggle={dispatchToggleModal}/>
           })}
         </div>
         <div 
