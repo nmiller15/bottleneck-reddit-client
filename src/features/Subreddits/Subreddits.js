@@ -19,23 +19,31 @@ import { setSubredditSelection } from '../../components/Feed/feedSlice';
     const subredditArray = ['r/all', 'r/pics', 'r/memes', 'r/wholesomememes', 'r/BeAmazed', 'r/funny', 'r/mildlyinfuriating', 'r/facepalm'];
     const imageSourceArray = [champagneBottles, glassBottleIcon, whiskeyBottle, cokeBottle, waterBottle, babyBottle, noLactose, milkBottle];
     
+    const handleSelectSubreddit = (subreddit) => {
+        dispatch(setSubredditSelection(subreddit));
+    }
+
     return (
         <div id="subreddit-list">
             <ul>
                 {subredditArray.map((subreddit, index) => {
                     return (
-                        <li className="subreddit">
-                        <a href="#" target="_blank">
-                            <div className="subreddit-icon-container">
-                                <img src={imageSourceArray[index]} alt="icon" />
-                            </div>
-                            <div className="subreddit-p-container">
-                                <p>
-                                    {subreddit}
-                                </p>
-                            </div>
-                        </a>
-                    </li>
+                        <li 
+                          className={subredditSelection === subreddit ?
+                            "subreddit active" :
+                            "subreddit"}
+                        >
+                            <button onClick={() => handleSelectSubreddit(subreddit)}>
+                                <div className="subreddit-icon-container">
+                                    <img src={imageSourceArray[index]} alt="icon" />
+                                </div>
+                                <div className="subreddit-p-container">
+                                    <p>
+                                        {subreddit}
+                                    </p>
+                                </div>
+                            </button>
+                        </li>
                     )
                 })}
             </ul>
