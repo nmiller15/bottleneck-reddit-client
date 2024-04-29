@@ -12,6 +12,12 @@ const Counter = () => {
     const handleClick = () => {
         dispatch(incrementCount());
     }
+    const count = useSelector((state) => state.counter.count);
+    const dispatch = useDispatch();
+
+    const handleClick = () => {
+        dispatch(incrementCount());
+    }
     return (
         <div id="Counter">
             <Timer />

@@ -4,8 +4,13 @@ const initialState = {
     count: 0
 }
 
+const initialState = {
+    count: 0
+}
+
 const options = {
     name: 'counter',
+    initialState,
     initialState,
     reducers: {
         incrementCount: (state) => {
