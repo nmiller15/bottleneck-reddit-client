@@ -4,12 +4,16 @@ import bigScore from '../../utils/bigScore.js';
 import './Voter.css';
 
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { incrementCount } from '../../features/Counter/counterSlice.js';
 // Arrow color and selection status is going to be controlled by the store.
 // Arrow hover states can be controlled by CSS
   
   const Voter = ({ score }) =>  {
     const [voterStatus, setVoterStatus] = useState(''); // '' 'up' 'down'
     const [numberScore, setNumberScore] = useState(score);
+
+    const dispatch = useDispatch();
 
     let stringScore;
 
@@ -20,6 +24,7 @@ import { useState } from 'react';
     }
 
     const handleUpvoteClick = () => {
+      dispatch(incrementCount());
       if (voterStatus === "up") {
         setNumberScore(numberScore - 1);
         setVoterStatus('');
@@ -34,6 +39,7 @@ import { useState } from 'react';
     }
 
     const handleDownvoteClick = () => {
+      dispatch(incrementCount());
       if (voterStatus === "down") {
         setNumberScore(numberScore + 1);
         setVoterStatus('');
