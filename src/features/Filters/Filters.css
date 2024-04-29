@@ -22,3 +22,8 @@
     background: linear-gradient(90deg, #E4666F, #E4666F 25%, #C0454D 100%);
     cursor: pointer;
 }
+
+#filters li.active {
+    background: transparent;
+    color: var(--black);
+}
