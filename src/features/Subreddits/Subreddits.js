@@ -36,13 +36,14 @@ import { setSubredditSelection } from '../../components/Feed/feedSlice';
                           className={subredditSelection === subreddit ?
                             "subreddit active" :
                             "subreddit"}
+                          onClick={() => {
+                            if (subredditSelection === subreddit) {
+                                handleClear();
+                            } else {
+                                handleSelectSubreddit(subreddit)}
+                            }}
                         >
-                            <button onClick={() => {
-                                if (subredditSelection === subreddit) {
-                                    handleClear();
-                                } else {
-                                    handleSelectSubreddit(subreddit)}
-                                }}>
+                            <button>
                                 <div className="subreddit-icon-container">
                                     <img src={imageSourceArray[index]} alt="icon" />
                                 </div>
