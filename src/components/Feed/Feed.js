@@ -10,11 +10,12 @@ import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal } from '../../features/PostModal/postModalSlice.js';
 import { activateSearchBar, deactivateSearchBar, setSearchText } from '../../features/SearchBar/searchBarSlice.js';
-import { setPostArray } from './feedSlice.js';
+import { setPostArray, setSubredditSelection } from './feedSlice.js';
 
 const Feed = () =>  {
   // bring in mocked front page data: probably will do this with the subreddits initial state in the end
   const postArray = useSelector((state) => state.feed.postArray);
+  const subredditSelection = useSelector((state) => state.feed.subredditSelection);
 
 
   // State variables for PostModal
@@ -60,7 +61,7 @@ const Feed = () =>  {
   useEffect(() => {
     const fetchPostArray = async () => {
       try {
-        const response = await fetch('https://www.reddit.com/.json');
+        const response = await fetch(`https://www.reddit.com/.${subredditSelection}json`);
         if (!response.ok) {
           throw new Error('Network response failed.');
         }
