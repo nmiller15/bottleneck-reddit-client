@@ -14,7 +14,7 @@
 .subreddit {
     padding: .35rem .5rem;
     border-radius: 25px;
-    transition: background-color .15s ease-in-out;
+    transition: all .15s ease-in-out;
     background-color: rgba(255,255,255, 0%);
 }
 
@@ -23,10 +23,15 @@
     cursor: pointer;
 }
 
+.subreddit:active {
+    background-color: rgba(255, 255, 255, 30%);
+}
+
 .subreddit-p-container {
     display: inline-block;
     justify-content: center;
 }
+
 
 .subreddit button {
     background: none;
