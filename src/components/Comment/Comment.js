@@ -4,7 +4,6 @@ import './Comment.css';
 import voterMock from '../../resources/voter_mock.svg';
   
   const Comment = ({comment}) =>  {
-	console.log('comment object arrived in Comment: ' + comment);
     const author = comment.data.author;
     const body = comment.data.body;
     const score = comment.data.score;
