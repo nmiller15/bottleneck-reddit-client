@@ -61,7 +61,7 @@ const Feed = () =>  {
   useEffect(() => {
     const fetchPostArray = async () => {
       try {
-        const response = await fetch(`https://www.reddit.com/.${subredditSelection}json`);
+        const response = await fetch(`https://www.reddit.com/${subredditSelection}.json`);
         if (!response.ok) {
           throw new Error('Network response failed.');
         }
@@ -78,7 +78,7 @@ const Feed = () =>  {
       }
     }
     fetchPostArray();
-  }, []);
+  }, [subredditSelection, dispatch]);
 
   if (!postArray) {
     return <div>Loading...</div>;
