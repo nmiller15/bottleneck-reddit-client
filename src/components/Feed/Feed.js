@@ -13,10 +13,9 @@ import { activateSearchBar, deactivateSearchBar, setSearchText } from '../../fea
 import { setPostArray } from './feedSlice.js';
 
 const Feed = () =>  {
-  // bring in mocked front page data: probably will do this with the subreddits initial state in the end
   const postArray = useSelector((state) => state.feed.postArray);
   const subredditSelection = useSelector((state) => state.subreddits.subredditSelection);
-
+  const filtersSelection = "/" + useSelector((state) => state.filters.selectedFilter).toLowerCase();
 
   // State variables for PostModal
   const modalIsActive = useSelector((state) => state.postModal.isActive);
@@ -62,7 +61,7 @@ const Feed = () =>  {
   useEffect(() => {
     const fetchPostArray = async () => {
       try {
-        const response = await fetch(`https://www.reddit.com/${subredditSelection}.json`);
+        const response = await fetch(`https://www.reddit.com/${subredditSelection}${filtersSelection}.json`);
         if (!response.ok) {
           throw new Error('Network response failed.');
         }
@@ -81,7 +80,7 @@ const Feed = () =>  {
     }
     fetchPostArray();
 
-  }, [subredditSelection, dispatch]);
+  }, [subredditSelection, filtersSelection, dispatch]);
 
   if (!postArray) {
     return <div>Loading...</div>;

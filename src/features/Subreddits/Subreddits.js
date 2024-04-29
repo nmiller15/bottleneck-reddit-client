@@ -10,7 +10,8 @@ import noLactose from '../../resources/lactose-milk-icon.svg'
 import milkBottle from '../../resources/milk-water-bottle-icon.svg'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setSubredditSelection } from '../../features/Subreddits/subredditsSlice.js'
+import { setSubredditSelection } from '../../features/Subreddits/subredditsSlice.js';
+import { setSelectedFilter } from '../../features/Filters/filtersSlice.js';
 
   const Subreddits = () =>  {
     const subredditSelection = useSelector((state) => state.subreddits.subredditSelection);
@@ -20,6 +21,7 @@ import { setSubredditSelection } from '../../features/Subreddits/subredditsSlice
     const imageSourceArray = [champagneBottles, glassBottleIcon, whiskeyBottle, cokeBottle, waterBottle, babyBottle, noLactose, milkBottle];
     
     const handleSelectSubreddit = (subreddit) => {
+        dispatch(setSelectedFilter("Best"));
         dispatch(setSubredditSelection(subreddit));
     }
 
