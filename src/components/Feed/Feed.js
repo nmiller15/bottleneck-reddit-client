@@ -15,6 +15,7 @@ import { setPostArray } from './feedSlice.js';
 const Feed = () =>  {
   // bring in mocked front page data: probably will do this with the subreddits initial state in the end
   const postArray = useSelector((state) => state.feed.postArray);
+  const subredditSelection = useSelector((state) => state.subreddits.subredditSelection);
 
 
   // State variables for PostModal
@@ -57,10 +58,11 @@ const Feed = () =>  {
     }
   })
 
+  // Fetch and load posts
   useEffect(() => {
     const fetchPostArray = async () => {
       try {
-        const response = await fetch('https://www.reddit.com/.json');
+        const response = await fetch(`https://www.reddit.com/${subredditSelection}.json`);
         if (!response.ok) {
           throw new Error('Network response failed.');
         }
@@ -72,12 +74,14 @@ const Feed = () =>  {
         }
         const array = responseObject.data.children;
         dispatch(setPostArray(array));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } catch (e) {
         console.error(e);
       }
     }
     fetchPostArray();
-  }, []);
+
+  }, [subredditSelection, dispatch]);
 
   if (!postArray) {
     return <div>Loading...</div>;

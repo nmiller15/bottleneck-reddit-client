@@ -12,11 +12,15 @@ const options = {
         setPostArray: (state, action) => {
             state.postArray = action.payload;
             return state;
-        }
+        },
+        setSortFilter: (state, action) => {
+            state.sortFilter = action.payload;
+            return state;
+        },
     }
 }
 
 const feedSlice = createSlice(options);
   
-export const { setPostArray } = feedSlice.actions;
+export const { setPostArray, setSortFilter } = feedSlice.actions;
 export default feedSlice.reducer;
