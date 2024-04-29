@@ -12,14 +12,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleModal } from '../../features/PostModal/postModalSlice.js';
 import { activateSearchBar, deactivateSearchBar, setSearchText } from '../../features/SearchBar/searchBarSlice.js';
 import { setPostArray } from './feedSlice.js';
+import { incrementCount } from '../../features/Counter/counterSlice';
 
 const Feed = () =>  {
   const postArray = useSelector((state) => state.feed.postArray);
   const subredditSelection = useSelector((state) => state.subreddits.subredditSelection);
   const filtersSelection = "/" + useSelector((state) => state.filters.selectedFilter).toLowerCase();
-
   const count = useSelector((state) => state.counter.count);
-  const time = useSelector((state) => state.timer.time);
 
   // State variables for PostModal
   const modalIsActive = useSelector((state) => state.postModal.isActive);
@@ -65,7 +64,12 @@ const Feed = () =>  {
   useEffect(() => {
     const fetchPostArray = async () => {
       try {
+        if (10 - count < 1) {
+          dispatch(setPostArray([]));
+          return;
+        }
         const response = await fetch(`https://www.reddit.com/${subredditSelection}${filtersSelection}.json`);
+        dispatch(incrementCount());
         if (!response.ok) {
           throw new Error('Network response failed.');
         }
@@ -90,6 +94,8 @@ const Feed = () =>  {
     return <div className="pop-over">Loading...</div>;
   }
 
+  
+
   return (
     <div className="Feed">
         <header>
@@ -110,7 +116,9 @@ const Feed = () =>  {
           className={modalIsActive ? "hide" : ""}
           onClick={dispatchDeactivateSearchBar}
         >
-          <Popover />
+          {count > 9 &&
+            <div>Rate limited... please wait</div>
+          }
           {postArray.map((post, index) => {
               const lcTitle = post.data.title.toLowerCase();
               const lcSearchText = searchText.toLowerCase();
