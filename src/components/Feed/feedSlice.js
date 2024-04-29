@@ -2,8 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     postArray: [],
-    sortFilter: 'hot',
-    subredditSelection: ''
+    sortFilter: 'hot'
 }
 
 const options = {
@@ -18,14 +17,10 @@ const options = {
             state.sortFilter = action.payload;
             return state;
         },
-        setSubredditSelection: (state, action) => {
-            state.subredditSelection = action.payload;
-            return state;
-        }
     }
 }
 
 const feedSlice = createSlice(options);
   
-export const { setPostArray, setSortFilter, setSubredditSelection } = feedSlice.actions;
+export const { setPostArray, setSortFilter } = feedSlice.actions;
 export default feedSlice.reducer;

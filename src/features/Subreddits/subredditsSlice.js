@@ -1,14 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const initialState = {
+    subredditSelection: ''
+}
+
 const options = {
     name: 'subredditsSlice',
-    initialState: [], 
+    initialState,
     reducers: {
-
+        setSubredditSelection: (state, action) => {
+            state.subredditSelection = action.payload;
+            return state;
+        }
     }
 }
 
 const subredditsSlice = createSlice(options);
 
-// export your actions with export const { named actions } = postModalSlice.actions;
+export const { setSubredditSelection } = subredditsSlice.actions;
 export default subredditsSlice.reducer;

@@ -10,10 +10,10 @@ import noLactose from '../../resources/lactose-milk-icon.svg'
 import milkBottle from '../../resources/milk-water-bottle-icon.svg'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { setSubredditSelection } from '../../components/Feed/feedSlice';
+import { setSubredditSelection } from '../../features/Subreddits/subredditsSlice.js'
 
   const Subreddits = () =>  {
-    const subredditSelection = useSelector((state) => state.feed.subredditSelection);
+    const subredditSelection = useSelector((state) => state.subreddits.subredditSelection);
     const dispatch = useDispatch();
 
     const subredditArray = ['r/all', 'r/pics', 'r/memes', 'r/wholesomememes', 'r/BeAmazed', 'r/funny', 'r/mildlyinfuriating', 'r/facepalm'];
