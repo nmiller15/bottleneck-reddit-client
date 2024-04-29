@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { setSubredditSelection } from '../../components/Feed/feedSlice';
 
   const Subreddits = () =>  {
-    const subredditSelection = useSelector((state) => state.subredditSelection);
+    const subredditSelection = useSelector((state) => state.feed.subredditSelection);
     const dispatch = useDispatch();
 
     const subredditArray = ['r/all', 'r/pics', 'r/memes', 'r/wholesomememes', 'r/BeAmazed', 'r/funny', 'r/mildlyinfuriating', 'r/facepalm'];
@@ -21,6 +21,10 @@ import { setSubredditSelection } from '../../components/Feed/feedSlice';
     
     const handleSelectSubreddit = (subreddit) => {
         dispatch(setSubredditSelection(subreddit));
+    }
+
+    const handleClear = () => {
+        dispatch(setSubredditSelection(''));
     }
 
     return (
@@ -33,7 +37,12 @@ import { setSubredditSelection } from '../../components/Feed/feedSlice';
                             "subreddit active" :
                             "subreddit"}
                         >
-                            <button onClick={() => handleSelectSubreddit(subreddit)}>
+                            <button onClick={() => {
+                                if (subredditSelection === subreddit) {
+                                    handleClear();
+                                } else {
+                                    handleSelectSubreddit(subreddit)}
+                                }}>
                                 <div className="subreddit-icon-container">
                                     <img src={imageSourceArray[index]} alt="icon" />
                                 </div>

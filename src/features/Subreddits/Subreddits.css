@@ -48,6 +48,10 @@
     margin-top: 0;
 }
 
+.subreddit.active {
+    background-color: var(--transparent-white);
+}
+
 .subreddit-icon-container {
     height: 2rem;
     width: 2rem;
@@ -62,4 +66,13 @@
 .subreddit-icon-container img {
     height: 1.5rem;
     margin: auto;
+}
+
+/* * {
+    outline: 1px solid blue;
+} */
+
+.exit {
+    align-self: flex-end;
+    margin-left: 2rem;
 }
