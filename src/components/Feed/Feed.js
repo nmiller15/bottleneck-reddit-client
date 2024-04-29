@@ -58,6 +58,7 @@ const Feed = () =>  {
     }
   })
 
+  // Fetch and load posts
   useEffect(() => {
     const fetchPostArray = async () => {
       try {
@@ -73,11 +74,13 @@ const Feed = () =>  {
         }
         const array = responseObject.data.children;
         dispatch(setPostArray(array));
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       } catch (e) {
         console.error(e);
       }
     }
     fetchPostArray();
+
   }, [subredditSelection, dispatch]);
 
   if (!postArray) {
