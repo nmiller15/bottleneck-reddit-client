@@ -1,5 +1,6 @@
 import React from 'react';
 import Subreddits from '../../features/Subreddits/Subreddits';
+import Counter from '../../features/Counter/Counter';
 import './SideBar.css';
 import logo from '../../resources/bottleneck-logo.svg'
   
@@ -20,17 +21,8 @@ import logo from '../../resources/bottleneck-logo.svg'
         
         <Subreddits />
         
-        <div id="counter">
-            <div id="clock-container">
-                <p>0:15</p>
-            </div>
-            <div id="call-count-container">
-                <p>6</p>
-            </div>
-            <div id="label-container">
-                <p>requests until your<br/>rate is limited</p>
-            </div>
-        </div>
+        <Counter />
+
         <div id="cta">
             <div id="cta-button">
                 <a href="mailto:contact@reddit.com">
