@@ -1,6 +1,9 @@
 import React from 'react';
 import './Filters.css';
-  
+
+import { useSelector, useDispatch } from 'react-redux';
+import { setSelectedFilter } from './filtersSlice';
+
   const Filters = () =>  {
 	return (
         <div id="filters">

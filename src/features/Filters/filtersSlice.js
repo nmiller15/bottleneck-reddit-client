@@ -1,14 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const initialState = {
+    selectedFilter: ''
+}
+
 const options = {
     name: 'filters',
-    initialState: [], 
+    initialState,
     reducers: {
-
+        setSelectedFilter: (state, action) => {
+            state.selectedFilter = action.payload;
+            return state;
+        }
     }
 }
 
 const filtersSlice = createSlice(options);
 
-// export your actions with export const { named actions } = postModalSlice.actions;
+export const { setSelectedFilter } = filtersSlice.actions;
 export default filtersSlice.reducer;
