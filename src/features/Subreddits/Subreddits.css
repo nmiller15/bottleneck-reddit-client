@@ -67,12 +67,3 @@
     height: 1.5rem;
     margin: auto;
 }
-
-/* * {
-    outline: 1px solid blue;
-} */
-
-.exit {
-    align-self: flex-end;
-    margin-left: 2rem;
-}
