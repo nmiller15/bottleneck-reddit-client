@@ -65,6 +65,47 @@ h1 {
     padding-top: 2px;
 }
 
+#counter {
+    padding-top: 15px;
+    margin: 0 auto 30px auto;
+    flex-shrink: 1;
+}
+
+#clock-container {
+    height: 24px;
+    width: 61px;
+    margin: auto;
+    background-color: var(--transparent-white);
+    border-radius: 20px;
+}
+
+#clock-container p {
+    font-size: 12px;
+    text-align: center;
+    padding: 3px 20px;
+}
+
+#call-count-container {
+    height: 100px;
+    width: 100px;
+    margin: auto;
+    background-color: var(--transparent-white);
+    border-radius: 20px;
+    margin-top: 4px;
+}
+
+#call-count-container p {
+    font-size: 60px;
+    text-align: center;
+    padding-top: 6px;
+}
+
+#label-container p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 6px;
+}
+
 #cta-button {
     background: linear-gradient(180deg, #FFD5D8, #FFD5D8 53%, #C0BFBF 100%);
     text-align: center;

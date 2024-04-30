@@ -1,6 +1,5 @@
 import React from 'react';
 import Subreddits from '../../features/Subreddits/Subreddits';
-import Counter from '../../features/Counter/Counter';
 import './SideBar.css';
 import logo from '../../resources/bottleneck-logo.svg'
   
@@ -20,9 +19,117 @@ import logo from '../../resources/bottleneck-logo.svg'
         </div>
         
         <Subreddits />
-        
-        <Counter />
-
+        {/* <div id="subreddit-list">
+            <ul>
+                <li className="subreddit">
+                    <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            <img src={champagneBottles} alt=""/>
+                        </div>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/all    
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            <img src={glassBottleIcon} alt=""/>
+                        </div>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/pics   
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            <img src={whiskeyBottle} alt=""/>
+                        </div>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/memes   
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            <img src={cokeBottle} alt=""/>
+                        </div>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/wholesomememes  
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            <img src={waterBottle} alt=""/>
+                        </div>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/BeAmazed
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            <img src={babyBottle} alt=""/>
+                        </div>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/funny
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            <img src={noLactose} alt=""/>
+                        </div>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/mildlyinfuriating  
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <li className="subreddit">
+                <a href="#" target="_blank">
+                        <div className="subreddit-icon-container">
+                            <img src={milkBottle} alt=""/>
+                        </div>
+                        <div className="subreddit-p-container">
+                            <p>
+                                r/facepalm
+                            </p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div> */}
+        <div id="counter">
+            <div id="clock-container">
+                <p>0:15</p>
+            </div>
+            <div id="call-count-container">
+                <p>6</p>
+            </div>
+            <div id="label-container">
+                <p>requests until your<br/>rate is limited</p>
+            </div>
+        </div>
         <div id="cta">
             <div id="cta-button">
                 <a href="mailto:contact@reddit.com">
