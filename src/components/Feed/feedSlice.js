@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     postArray: [],
-    sortFilter: 'hot'
+    sortFilter: 'hot',
+    lastDisplayedFetchUrl: ''
 }
 
 const options = {
@@ -17,10 +18,14 @@ const options = {
             state.sortFilter = action.payload;
             return state;
         },
+        setLastDisplayedFetchUrl: (state, action) => {
+            state.sortFilter = action.payload;
+            return state;
+        }
     }
 }
 
 const feedSlice = createSlice(options);
   
-export const { setPostArray, setSortFilter } = feedSlice.actions;
+export const { setPostArray, setSortFilter, setLastDisplayedFetchUrl } = feedSlice.actions;
 export default feedSlice.reducer;
