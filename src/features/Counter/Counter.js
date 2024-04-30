@@ -1,5 +1,6 @@
 import React from 'react';
 import './Counter.css';
+import Timer from '../Timer/Timer';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { incrementCount } from './counterSlice';
@@ -13,9 +14,7 @@ const Counter = () => {
     }
     return (
         <div id="Counter">
-            <div id="clock-container">
-                <p>0:15</p>
-            </div>
+            <Timer />
             <div id="call-count-container" onClick={handleClick}>
                 <p>{10 - count}</p>
             </div>
