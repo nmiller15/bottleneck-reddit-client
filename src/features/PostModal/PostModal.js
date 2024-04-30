@@ -9,7 +9,6 @@ import './PostModal.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setPermalink, setPostData } from '../../features/PostModal/postModalSlice.js';
-import { incrementCount } from '../../features/Counter/counterSlice.js';
 
 const PostModal = ({ toggle, permalink }) =>  {
     
@@ -27,7 +26,6 @@ const PostModal = ({ toggle, permalink }) =>  {
         const fetchPostData = async () => {
             try {
                 const response = await fetch(`https://api.reddit.com${permalink}.json`);
-                dispatch(incrementCount());
                 if (!response.ok) {
                     throw new Error('Network response failed.');
                 }
