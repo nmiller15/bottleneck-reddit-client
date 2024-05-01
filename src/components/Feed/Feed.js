@@ -3,6 +3,7 @@ import SearchBar from '../../features/SearchBar/SearchBar.js';
 import Card from '../Card/Card.js';
 import PostModal from '../../features/PostModal/PostModal.js';
 import Filters from '../../features/Filters/Filters.js';
+import Popover from '../Popover/Popover.js'
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
 import { useEffect } from 'react';
@@ -116,15 +117,7 @@ const Feed = () =>  {
           className={modalIsActive ? "hide" : ""}
           onClick={dispatchDeactivateSearchBar}
         >
-          {count > 9 &&
-            <div className="pop-over">
-              <div className="pop-over-container">
-                <p className="bottle-emoji">🍾</p>
-                <h3>Bottlenecked....</h3>
-                <p>Your rate has been limited for {time} more seconds.</p>
-              </div>
-            </div>
-          }
+          <Popover />
           {postArray.map((post, index) => {
               const lcTitle = post.data.title.toLowerCase();
               const lcSearchText = searchText.toLowerCase();
