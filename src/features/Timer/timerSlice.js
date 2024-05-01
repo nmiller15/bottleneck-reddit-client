@@ -21,5 +21,6 @@ const options = {
 
 const timerSlice = createSlice(options);
 
+
 export const { decrementTime, resetTime } = timerSlice.actions;
 export default timerSlice.reducer 
