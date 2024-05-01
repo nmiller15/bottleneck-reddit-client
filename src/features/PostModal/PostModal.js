@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CommentsList from '../../components/CommentsList/CommentsList.js';
 import Voter from '../../components/Voter/Voter.js';
 import Media from '../../components/Media/Media.js';
+import Popover from '../../components/Popover/Popover.js';
 import mockJson from '../../mock/reddit-post-mock.json';
 import voterMock from '../../resources/voter_mock.svg';
 import exit from '../../resources/X.svg';
@@ -71,7 +72,8 @@ const PostModal = ({ toggle, permalink }) =>  {
     }
 
 	return (
-	       <div className="PostModal">
+	    <div className="PostModal">
+            <Popover />
             <div id="exit-button" onClick={handleExitClick}>
                 <img src={exit} alt="" />
             </div>
@@ -109,7 +111,7 @@ const PostModal = ({ toggle, permalink }) =>  {
                 <h3>Comments <span className="accent">({postData.numComments})</span></h3>
                 <CommentsList comments={postData.commentArray} />
             </div>
-      </div>
+        </div>
 	);
   }
   

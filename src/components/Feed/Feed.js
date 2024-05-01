@@ -3,6 +3,7 @@ import SearchBar from '../../features/SearchBar/SearchBar.js';
 import Card from '../Card/Card.js';
 import PostModal from '../../features/PostModal/PostModal.js';
 import Filters from '../../features/Filters/Filters.js';
+import Popover from '../Popover/Popover.js'
 import './Feed.css';
 import searchIcon from '../../resources/Search Icon.svg';
 import { useEffect } from 'react';
@@ -16,6 +17,9 @@ const Feed = () =>  {
   const postArray = useSelector((state) => state.feed.postArray);
   const subredditSelection = useSelector((state) => state.subreddits.subredditSelection);
   const filtersSelection = "/" + useSelector((state) => state.filters.selectedFilter).toLowerCase();
+
+  const count = useSelector((state) => state.counter.count);
+  const time = useSelector((state) => state.timer.time);
 
   // State variables for PostModal
   const modalIsActive = useSelector((state) => state.postModal.isActive);
@@ -83,7 +87,7 @@ const Feed = () =>  {
   }, [subredditSelection, filtersSelection, dispatch]);
 
   if (!postArray) {
-    return <div>Loading...</div>;
+    return <div className="pop-over">Loading...</div>;
   }
 
   return (
@@ -106,6 +110,7 @@ const Feed = () =>  {
           className={modalIsActive ? "hide" : ""}
           onClick={dispatchDeactivateSearchBar}
         >
+          <Popover />
           {postArray.map((post, index) => {
               const lcTitle = post.data.title.toLowerCase();
               const lcSearchText = searchText.toLowerCase();
