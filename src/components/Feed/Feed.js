@@ -19,6 +19,7 @@ const Feed = () =>  {
   const subredditSelection = useSelector((state) => state.subreddits.subredditSelection);
   const filtersSelection = "/" + useSelector((state) => state.filters.selectedFilter).toLowerCase();
   const count = useSelector((state) => state.counter.count);
+  const time = useSelector((state) => state.timer.time);
 
   // State variables for PostModal
   const modalIsActive = useSelector((state) => state.postModal.isActive);
@@ -117,7 +118,13 @@ const Feed = () =>  {
           onClick={dispatchDeactivateSearchBar}
         >
           {count > 9 &&
-            <div>Rate limited... please wait</div>
+            <div className="pop-over">
+              <div className="pop-over-container">
+                <p className="bottle-emoji">🍾</p>
+                <h3>Bottlenecked....</h3>
+                <p>Your rate has been limited for {time} more seconds.</p>
+              </div>
+            </div>
           }
           {postArray.map((post, index) => {
               const lcTitle = post.data.title.toLowerCase();
