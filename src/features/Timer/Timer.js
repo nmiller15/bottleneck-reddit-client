@@ -8,5 +8,6 @@ import './Timer.css';
 	);
   }
   
+  
   export default Timer;
   

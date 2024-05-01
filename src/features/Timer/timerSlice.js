@@ -12,5 +12,6 @@ const options = {
 
 const timerSlice = createSlice(options);
 
-// export const { actionCreator } = postModalSlice.actions;
+
+export const { decrementTime, resetTime } = timerSlice.actions;
 export default timerSlice.reducer 
