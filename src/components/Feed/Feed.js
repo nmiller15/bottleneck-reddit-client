@@ -117,15 +117,7 @@ const Feed = () =>  {
           className={modalIsActive ? "hide" : ""}
           onClick={dispatchDeactivateSearchBar}
         >
-          {count > 9 &&
-            <div className="pop-over">
-              <div className="pop-over-container">
-                <p className="bottle-emoji">🍾</p>
-                <h3>Bottlenecked....</h3>
-                <p>Your rate has been limited for {time} more seconds.</p>
-              </div>
-            </div>
-          }
+          <Popover />
           {postArray.map((post, index) => {
               const lcTitle = post.data.title.toLowerCase();
               const lcSearchText = searchText.toLowerCase();
