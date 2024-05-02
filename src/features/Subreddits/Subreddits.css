@@ -68,3 +68,9 @@
     height: 1.5rem;
     margin: auto;
 }
+
+@media screen and (max-width: 1036px) {
+    .subreddit {
+        padding: .25rem .5rem;
+    }
+}

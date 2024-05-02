@@ -94,3 +94,89 @@ h1 {
    padding-top: .5rem;
    padding-bottom: 2rem;
 }
+
+@media screen and (max-width: 1036px) {
+    .SideBar {
+        height: 100%;
+        width: 15rem;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: var(--accent-pink);
+        color: white;
+        padding: 1rem;
+        top: 0;
+        left: 0;
+    }
+
+    #headline-container {
+        display: block;
+        width: 100%;
+        margin: 0 auto 0 auto;
+        justify-content: center;
+    }
+    
+    #logo-container {
+        height: 4rem;
+        width: 4rem;
+        margin: auto;
+        border-radius: 100%;
+        background: linear-gradient(180deg, #fcf6f7 50%, #CCCCCC 100%);
+        display: flex;
+        place-content: center;
+    }
+    
+    #logo-container img {
+        height: 3rem;
+        margin: auto;
+    }
+    
+    #text-container {
+        height: auto;
+    }
+    
+    #tagline {
+        margin-bottom: 1rem;
+    }
+    
+    #tagline p {
+        font-size: 14px;
+        text-align: center;
+        width: auto;
+        margin: auto;
+        padding-left: 0;
+    }
+    
+    #cta-button {
+        background: linear-gradient(180deg, #FFD5D8, #FFD5D8 53%, #C0BFBF 100%);
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 20px;
+        transition: background .15s ease-in-out;
+    }
+    
+    #cta-button:hover {
+        background: linear-gradient(180deg, #FFD5D8, #FFD5D8 53%, #949494 100%);
+        cursor: pointer;
+    }
+    
+    #cta-button a {
+        color: #000000;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    
+    #cta-body {
+        margin-top: 10px; 
+    }
+    
+    #cta-body p {
+       font-size: 10px;
+       text-align: center;
+       padding-top: .5rem;
+       padding-bottom: 2rem;
+       margin-bottom: 10px;
+    }
+}
