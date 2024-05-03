@@ -95,3 +95,14 @@ header {
         flex-direction: row-reverse
     }
 }
+
+@media only screen and (max-width: 932px) {
+    .Feed {
+        margin-left: 0;
+        padding: 0 1.5rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+}

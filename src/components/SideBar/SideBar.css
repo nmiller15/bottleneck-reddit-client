@@ -184,10 +184,26 @@ h1 {
 
 /* SideBar button visibility is controlled by SideBar.js */
 .activate-sidebar-button {
-        position: absolute;
-        left: 1rem;
-        bottom: 1rem;
-        transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: none;
+
+}
+
+.activate-sidebar-button {
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.activate-sidebar-button .logo-container {
+    box-shadow: rgba(0, 0, 0, 0.2) -2px 2px 4px;  
+}
+
+.activate-sidebar-button:active {
+    background: linear-gradient(180deg, var(--coral) 25%, #9a6d6d 100%);
 }
 
 .below-screen {
@@ -199,13 +215,7 @@ h1 {
         left: -17rem;
     }
     
-    
-
-    .activate-sidebar-button .logo-container {
-        background: linear-gradient(180deg, var(--coral) 50%, #9a6d6d 100%);
-        cursor: pointer;
-        box-shadow: rgba(0, 0, 0, 0.298) -2px 2px 4px;
+    .SideBar {
+        overflow-y: scroll;
     }
-
-    
 }

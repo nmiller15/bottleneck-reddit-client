@@ -94,3 +94,8 @@
    }
  }
  
+ @media only screen and (max-width: 932px) {
+   .PostModal {
+      height: 80vh;
+   }
+ }

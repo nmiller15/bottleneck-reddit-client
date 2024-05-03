@@ -27,3 +27,10 @@
     background: transparent;
     color: var(--black);
 }
+
+@media only screen and (max-width: 932px) {
+    #filters li {
+        padding: 2px 16px;
+        margin: 0 15px;
+    }
+}

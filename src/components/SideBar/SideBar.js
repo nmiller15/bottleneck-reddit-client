@@ -9,14 +9,14 @@ import logo from '../../resources/bottleneck-logo.svg'
 
     return (
 	  <>
-        <div className={ screenWidth > 932 ? 
+        <button className={ screenWidth > 932 ? 
                             "activate-sidebar-button below-screen" :
                             "activate-sidebar-button"}
         >
             <div className="logo-container">
                   <img src={logo} alt="Wine bottle icon"/>
               </div>
-        </div>
+        </button>
         <div 
           className={ screenWidth > 932 ?
                       "SideBar" :
