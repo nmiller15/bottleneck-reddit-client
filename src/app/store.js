@@ -6,6 +6,7 @@ import counterReducer from '../features/Counter/counterSlice';
 import timerReducer from '../features/Timer/timerSlice';
 import feedReducer from '../components/Feed/feedSlice';
 import filtersReducer from '../features/Filters/filtersSlice';
+import mobileSideBarReducer from '../components/SideBar/mobileSideBarSlice';
 
 const store =  configureStore({
     reducer: {
@@ -16,6 +17,7 @@ const store =  configureStore({
         timer: timerReducer,
         counter: counterReducer,
         feed: feedReducer,
+        mobileSideBar: mobileSideBarReducer,
     }
 })
 
