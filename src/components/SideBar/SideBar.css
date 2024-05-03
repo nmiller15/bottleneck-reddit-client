@@ -10,6 +10,7 @@
     padding: 1rem 1rem 1rem 1rem;
     top: 0;
     left: 0;
+    transition: all .15s ease-in-out;
 }
 
 p {
@@ -117,7 +118,7 @@ h1 {
         justify-content: center;
     }
     
-    #logo-container {
+    .logo-container {
         height: 4rem;
         width: 4rem;
         margin: auto;
@@ -127,7 +128,7 @@ h1 {
         place-content: center;
     }
     
-    #logo-container img {
+    .logo-container img {
         height: 3rem;
         margin: auto;
     }
@@ -179,4 +180,32 @@ h1 {
        padding-bottom: 2rem;
        margin-bottom: 10px;
     }
+}
+
+/* SideBar button visibility is controlled by SideBar.js */
+.activate-sidebar-button {
+        position: absolute;
+        left: 1rem;
+        bottom: 1rem;
+        transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.below-screen {
+    bottom: -1rem;
+}
+
+@media only screen and (max-width: 932px) {
+    .collapsed {
+        left: -17rem;
+    }
+    
+    
+
+    .activate-sidebar-button .logo-container {
+        background: linear-gradient(180deg, var(--coral) 50%, #9a6d6d 100%);
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.298) -2px 2px 4px;
+    }
+
+    
 }
