@@ -75,3 +75,9 @@
    font-size: 10px;
    text-align: right;
 }
+
+@media only screen and (max-width: 1036px) {
+   .Card {
+      margin: 1rem
+   }   
+}

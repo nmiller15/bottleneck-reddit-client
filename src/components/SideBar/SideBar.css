@@ -95,7 +95,7 @@ h1 {
    padding-bottom: 2rem;
 }
 
-@media screen and (max-width: 1036px) {
+@media only screen and (max-width: 1036px) {
     .SideBar {
         height: 100%;
         width: 15rem;

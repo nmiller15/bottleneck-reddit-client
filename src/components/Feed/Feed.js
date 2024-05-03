@@ -99,8 +99,15 @@ const Feed = () =>  {
 
   return (
     <div className="Feed">
-        <header>
-            <Filters />
+        <header 
+          className={searchBarIsActive ? 
+                      "reverse" :
+                      ""}
+        >
+            { !searchBarIsActive && window.innerWidth < 1036 ?
+              <Filters /> :
+              <></>
+            }
             <div id="search-icon-container">
               { searchText && !searchBarIsActive ?
                 <button id="clear-search" onClick={dispatchClearSearch}>Clear Search Filter</button> :

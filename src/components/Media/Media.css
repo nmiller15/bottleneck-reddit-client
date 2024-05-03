@@ -12,15 +12,15 @@
     margin: auto;
     max-width: 722px;
     max-height: 600px;
-    height: 100%;
-    object-fit: contain;
+    width: 100%;
+    object-fit: scale-down;
 }
 
 .media-container img {
     margin: auto;
     max-width: 722px;
     max-height: 600px;
-    height: 100%;
+    width: 100%;
     object-fit: contain;
 }
 
