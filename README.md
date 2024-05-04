@@ -18,6 +18,7 @@ Bottleneck is a Reddit Client that leans into the API limitations that Reddit ha
 
 ## How To Use
 I've deployed this application on Netlify. Here's the link!
+[https://bottleneckreddit.netlify.app]([url](https://bottleneckreddit.netlify.app))
 
 ## License
 Copyright 2024 Nolan Miller
