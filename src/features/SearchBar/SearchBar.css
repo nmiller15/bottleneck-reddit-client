@@ -28,3 +28,10 @@
 #submit-button:active {
     background: linear-gradient(180deg, #E4666F 1%, #E4666F 20%, #7E383D 100%);
 }
+
+@media only screen and (max-width: 933px) {
+
+    #text-field {
+        width: 12rem;
+    }
+}

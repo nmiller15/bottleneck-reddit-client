@@ -17,6 +17,7 @@
 #exit-button {
     position: fixed;
     right: 3rem;
+    z-index: 200;
 }
 
 #exit-button:hover {
@@ -86,4 +87,17 @@
     font-size: 10px;
     text-align: right;
  }
+
+ @media only screen and (max-width: 1036px) {
+   .PostModal {
+      overflow-x: hidden;
+      height: 90vh;
+   }
+ }
  
+ @media only screen and (max-width: 932px) {
+   .PostModal {
+      height: 80vh;
+      margin-top: 4.5rem;
+   }
+ }

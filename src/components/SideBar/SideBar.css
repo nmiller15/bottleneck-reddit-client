@@ -10,6 +10,7 @@
     padding: 1rem 1rem 1rem 1rem;
     top: 0;
     left: 0;
+    transition: all .15s ease-in-out;
 }
 
 p {
@@ -33,7 +34,7 @@ h1 {
     justify-content: center;
 }
 
-#logo-container {
+.logo-container {
     height: 4rem;
     width: 4rem;
     border-radius: 100%;
@@ -42,7 +43,7 @@ h1 {
     place-content: center;
 }
 
-#logo-container img {
+.logo-container img {
     height: 3rem;
     margin: auto;
 }
@@ -93,4 +94,156 @@ h1 {
    font-size: 14px;
    padding-top: .5rem;
    padding-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1036px) {
+    .SideBar {
+        height: 100%;
+        width: 15rem;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        background-color: var(--accent-pink);
+        color: white;
+        padding: 1rem;
+        top: 0;
+        left: 0;
+    }
+
+    #headline-container {
+        display: block;
+        width: 100%;
+        margin: 0 auto 0 auto;
+        justify-content: center;
+    }
+    
+    .logo-container {
+        height: 4rem;
+        width: 4rem;
+        margin: auto;
+        border-radius: 100%;
+        background: linear-gradient(180deg, #fcf6f7 50%, #CCCCCC 100%);
+        display: flex;
+        place-content: center;
+    }
+    
+    .logo-container img {
+        height: 3rem;
+        margin: auto;
+    }
+    
+    #text-container {
+        height: auto;
+    }
+    
+    #tagline {
+        margin-bottom: 1rem;
+    }
+    
+    #tagline p {
+        font-size: 14px;
+        text-align: center;
+        width: auto;
+        margin: auto;
+        padding-left: 0;
+    }
+    
+    #cta-button {
+        background: linear-gradient(180deg, #FFD5D8, #FFD5D8 53%, #C0BFBF 100%);
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 20px;
+        transition: background .15s ease-in-out;
+    }
+    
+    #cta-button:hover {
+        background: linear-gradient(180deg, #FFD5D8, #FFD5D8 53%, #949494 100%);
+        cursor: pointer;
+    }
+    
+    #cta-button a {
+        color: #000000;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    
+    #cta-body {
+        margin-top: 10px; 
+    }
+    
+    #cta-body p {
+       font-size: 10px;
+       text-align: center;
+       padding-top: .5rem;
+       padding-bottom: 2rem;
+       margin-bottom: 10px;
+    }
+}
+
+
+@media only screen and (max-width: 932px) {
+
+    .activate-sidebar-button {
+        position: fixed;
+        left: 1rem;
+        bottom: 1rem;
+        transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        border: none;
+    }
+
+    .activate-sidebar-button .logo-container:active {
+        background: linear-gradient(180deg, var(--coral) 25%, #9a6d6d 100%);
+    }
+    
+    .below-screen {
+        bottom: -1rem;
+    } 
+    
+    .activate-sidebar-button {
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    }
+
+    .activate-sidebar-button .logo-container {
+        box-shadow: rgba(0, 0, 0, 0.2) -2px 2px 4px;  
+    }
+    
+    .collapsed {
+        left: -28rem;
+    }
+    
+    .SideBar {
+        overflow-y: scroll;
+        width: 25rem;
+        z-index: 50;
+    }
+
+    #text-container {
+        text-align: center;
+    }
+
+    #tagline {
+        margin: auto;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .exit-button {
+        position: fixed;
+        left: 28rem;
+        top: 1rem;
+        z-index: 100;
+    }
+}
+
+@media only screen and (max-width: 932px) {
+    .exit-button {
+        left: 1rem;
+        z-index: 200;
+    }
 }

@@ -32,3 +32,10 @@
     text-align: center;
     color: var(--snow);
 }
+
+@media only screen and (max-width: 932px) {
+    .pop-over .pop-over-container {
+        padding: 5rem 1rem;
+        margin: auto 2rem;
+    }
+}

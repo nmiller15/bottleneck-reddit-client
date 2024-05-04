@@ -6,6 +6,7 @@ import { setSelectedFilter } from './filtersSlice';
 
 const Filters = () =>  {
   const selectedFilter = useSelector((state) => state.filters.selectedFilter);
+  const mobileSideBarisActive = useSelector((state) => state.mobileSideBar.mobileSidebarIsActive)
   const dispatch = useDispatch();
   const filtersArray = ["Best", "Hot", "New", "Top", "Rising"];
   
@@ -13,27 +14,27 @@ const Filters = () =>  {
     dispatch(setSelectedFilter(filtersArray[index]));
   }
   
-	return (
-        <div id="filters">
-            <ul>
-                {filtersArray.map((filter, index) => {
-                  return (
-                    <li 
-                      key={index} 
-                      onClick={() => handleClick(index)}
-                      className={
-                        selectedFilter === filter ?
-                         "active" :
-                         ""
-                      }>
-                        {filter}
-                    </li>
-                  ) 
-                })}
-            </ul>
-        </div>
-	);
-  }
+  return (
+    <>
+        {mobileSideBarisActive ? 
+            null :
+            <div id="filters">
+                <ul>
+                    {filtersArray.map((filter, index) => (
+                        <li 
+                            key={index} 
+                            onClick={() => handleClick(index)}
+                            className={selectedFilter === filter ? "active" : ""}
+                        >
+                            {filter}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        }
+    </>
+);
+}
   
 export default Filters;
   
