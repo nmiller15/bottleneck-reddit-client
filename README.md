@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+![Group 12](https://github.com/nmiller15/bottleneck-reddit-client/assets/156489804/4d686862-b63e-4b90-8279-7d410c2defff)
+# Bottleneck Reddit Client
+Front-End Development Portfolio Project
+Codecademy Full-Stack Developer Professional Certification
+## Description
+Bottleneck is a Reddit Client that leans into the API limitations that Reddit has implemented. This project only uses the JSON API, but mocks some of the requests that would be made by a client to the normal API and it... bottlenecks you. All the data is pulled from Reddit, and the app allows you to view content from a selection of subreddits, view and interact with the comments and even provides an email link to Reddit support if you would like to make your voice heard.
+## What I Learned
++ **Redux** - This is the first project I've managed complex state in using Redux!
++ **Project Planning in React** - If I could have done this one over again, I would have defininetly tackled some of these things in a different order. For one thing, I waited to implement state until much of the UI was completed, and this wasn't a great idea. I really should have just done it up front.
++ **Separation of Concerns** - This concept is certainly not perfectly implemented here... but, concerns are much more separated than they were at the beginning of the project. When I started, I wanted my components to be large and inclusive sections, it wasn't until I implemented the fetch APIs that I realized why it is beneficial to segment the application into the smallest components possible.
++ **When to stop wasting time** - I worked on this project for 3 weeks, and if this was a project that I was passionate about completeing, that wouldn't be an issue, however, this was primarily a project that I built to reinforce front-end development concepts, namely React and Redux working together. I'm going to be honest, there's a lot about this application that I would still like to clean up, but I feel like I've learned what I could from this project already. It is always hard for me to put something down when it's not perfect, but I learned a ton doing this project, a ton that I will carry into the next project I work on!
++ **The Value of Pull Requests** - On a solo project, it's so easy to get out of the habit of creating pull requests, branching, or even committing your code. _Isn't that all for collaboration?_ No! I actually had a huge part of my project somehow disappear on me, and because my project was so thoroughly documented and version controlled, I was very quickly able to go back through my pull requests and find a commit that fixed my issue. After rebasing, I was back off to the races. Plus, creating my own PRs helped me catch lots of bugs or unneccesary code before it was merged into the main branch. If you want to see the early iterations of the project, I have pictures and videos of the beginning of development all documented in the closed pull requests in this repo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies
++ ⚛️ **React** - This project was bootstrapped using [create-react-app](https://create-react-app.dev)
++ ✳️ **Redux**
++ 🐈‍⬛ **Git and Github** - Obviously, but this is the first project I really used it effectively on.
 
-## Available Scripts
+## How To Use
+I've deployed this application on Netlify. Here's the link!
 
-In the project directory, you can run:
+## License
+Copyright 2024 Nolan Miller
 
-### `npm start`
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    http://www.apache.org/licenses/LICENSE-2.0
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
