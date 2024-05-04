@@ -75,7 +75,7 @@ const Feed = () =>  {
           throw new Error('Network response failed.');
         }
         const responseObject = await response.json();
-        console.log(responseObject);
+        // console.log(responseObject);
         if (!responseObject) {
           console.log('No response object.');
           return;
@@ -104,9 +104,9 @@ const Feed = () =>  {
                       "reverse" :
                       ""}
         >
-            { !searchBarIsActive && window.innerWidth < 1036 ?
-              <Filters /> :
-              <></>
+            { window.innerWidth < 1036 && searchBarIsActive ?
+              <></> :
+              <Filters />
             }
             <div id="search-icon-container">
               { searchText && !searchBarIsActive ?

@@ -240,3 +240,10 @@ h1 {
         z-index: 100;
     }
 }
+
+@media only screen and (max-width: 932px) {
+    .exit-button {
+        left: 1rem;
+        z-index: 200;
+    }
+}

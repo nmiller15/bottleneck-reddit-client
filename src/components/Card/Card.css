@@ -4,6 +4,7 @@
    margin: 1rem 4rem;
    background-color: rgba(230, 139, 145, 15%);
    border-radius: 10px;
+   overflow: hidden;
 }
 
 .post-text {
